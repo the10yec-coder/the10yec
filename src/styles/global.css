@@ -95,26 +95,26 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 4.2rem); /* Reduced minimum for better mobile scaling */
+  font-size: clamp(1.8rem, 5vw, 4.2rem); 
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.5vw, 3.2rem);
   font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.4rem, 3.5vw, 2.2rem);
   font-weight: 600;
 }
 
 h4 {
-  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
 }
 
 p {
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--text-secondary);
 }

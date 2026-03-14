@@ -542,7 +542,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     align-items: stretch;
     gap: 0;
     margin-top: 2rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap; /* Added for better responsiveness */
   }
 
   .step {
@@ -751,12 +751,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     .program-hero h1 {
-      font-size: 2.2rem;
+      font-size: 2rem; /* Reduced from 2.2rem for better fit with the serif font */
     }
 
     .content-col h2,
     .section-header h2 {
-      font-size: 1.9rem;
+      font-size: 1.8rem;
+    }
+
+    .yoga-sutra p {
+      font-size: 1.1rem;
+    }
+
+    .samyama-result h3 {
+      font-size: 1.8rem;
     }
 
     .offering-card,

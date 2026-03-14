@@ -60,9 +60,11 @@ const events = [
     <div class="container hero-content">
       <div class="hero-text">
         <div class="hero-label">GRATITUDE. YOUTH EXCELLENCE.</div>
-        <h1>
-          Where <span class="text-blue">modern innovation</span><br>
-          is powered by <span class="text-gold">ancient wisdom</span>
+        <h1 class="hero-title">
+          <span class="title-segment">Where</span> 
+          <span class="title-segment text-blue">Modern Innovation</span>
+          <span class="title-segment">Is Powered By</span> 
+          <span class="title-segment text-gold">Ancient Wisdom</span>
         </h1>
         <p class="hero-subtitle">
           <strong>Cultivating next generation youth entrepreneurs for the AI era using Yogic Powers</strong>
@@ -459,6 +461,10 @@ const events = [
     animation: fadeInUp 0.8s ease-out 0.2s backwards;
   }
 
+  .title-segment {
+    display: inline;
+  }
+
   .gradient-text {
     background: var(--gradient-vibrant);
     -webkit-background-clip: text;
@@ -627,7 +633,7 @@ const events = [
   /* Challenges Grid */
   .challenges-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Force single horizontal stack */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     margin-top: 3rem;
     max-width: 1200px;
@@ -684,7 +690,7 @@ const events = [
   /* Programs Grid */
   .programs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Force 2x2 grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
     max-width: 1200px; /* Wider grid to reduce side whitespace */
@@ -829,7 +835,7 @@ const events = [
     justify-content: center;
     gap: 1.5rem;
     margin-top: 3rem;
-    flex-wrap: nowrap; /* Force single row */
+    flex-wrap: wrap; /* Allowed wrapping on mobile */
   }
 
   .framework-step {
@@ -1002,22 +1008,26 @@ const events = [
     }
 
     .hero-text h1 {
-      font-size: 2rem; /* Reduced for better fit */
-      line-height: 1.1;
-      margin-bottom: 1rem;
+      font-size: 2.3rem; /* Increased for impact */
+      line-height: 1.3;
+      margin-bottom: 1.25rem;
+    }
+
+    .title-segment {
+      display: block;
     }
 
     .hero-subtitle {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      padding: 0 0.5rem;
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      padding: 0 0.25rem;
     }
 
     .hero-description {
-      font-size: 0.9rem;
-      line-height: 1.5;
-      margin-bottom: 1.5rem;
-      padding: 0 0.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      padding: 0 0.25rem;
     }
 
     /* Upcoming Events Mobile */
@@ -1096,7 +1106,15 @@ const events = [
     }
 
     .hero-text h1 {
-      font-size: 1.7rem; 
+      font-size: 2rem; 
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+
+    .hero-description {
+      font-size: 0.95rem;
     }
 
     .hero-label {

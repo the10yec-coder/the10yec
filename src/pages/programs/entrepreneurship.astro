@@ -1,51 +1,71 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProgramHero from '../../components/ProgramHero.astro';
 ---
 
-<BaseLayout title="Entrepreneurship Program - 10YEC Youth Excellence Center">
-  <section class="program-hero">
+<BaseLayout title="Entrepreneurship & Leadership - 10YEC Youth Excellence Center">
+  <ProgramHero 
+    title="Leading with Purpose" 
+    subtitle="Building the next generation of innovators through comprehensive Foundation & Leadership Camps"
+    label="ENTREPRENEURSHIP"
+  />
+
+  <!-- Overview Section -->
+  <section class="section">
     <div class="container">
-      <div class="program-hero-content">
-        <span class="section-label">ENTREPRENEURSHIP</span>
-        <h1>Leading with Purpose</h1>
-        <p class="hero-subtitle">
-          Building the next generation of innovators through comprehensive Foundation & Leadership Camps.
-        </p>
+      <div class="two-col-layout">
+        <div class="content-col">
+          <h2 id="public-speaking">Public Speaking</h2>
+          <p>
+            Find your voice and inspire others. Our comprehensive curriculum focus on public 
+            speaking, debate, and presentation skills training, empowering youth to 
+            communicate their ideas with confidence and clarity.
+          </p>
+          <div class="yoga-sutra">
+            <p>"Communication is the bridge between confusion and clarity."</p>
+          </div>
+        </div>
+        <div class="visual-col">
+          <div class="feature-box">
+            <div class="feature-icon">📢</div>
+            <h3>Core Skills</h3>
+            <ul class="limbs-list">
+              <li>Voice Modulation & Tonality</li>
+              <li>Body Language & Presence</li>
+              <li>Storytelling Techniques</li>
+              <li>Impromptu Speaking</li>
+              <li>Persuasive Argumentation</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="public-speaking">
+  <!-- Methodology Section -->
+  <section class="section">
     <div class="container">
       <div class="section-header text-center">
-        <h2>Public Speaking</h2>
-        <p>Find your voice and inspire others.</p>
-      </div>
-      <div class="content-placeholder">
-        <p>Curriculum for public speaking, debate, and presentation skills training.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="methodology">
-    <div class="container">
-      <div class="section-header text-center">
-        <h2>Methodology</h2>
-        <p>Our unique approach to nurturing entrepreneurial mindset.</p>
+        <span class="section-label">METHODOLOGY</span>
+        <h2>Our Approach to Leadership</h2>
+        <p>Unique frameworks designed to nurture an entrepreneurial mindset and personal excellence</p>
       </div>
       
       <div class="methodology-grid">
         <div class="methodology-card">
+          <div class="methodology-icon">🎯</div>
           <h3>I-O-A-M Framework</h3>
-          <p>Insight - Observe - Analyze - Monitor. A systematic approach to problem solving.</p>
+          <p>Insight - Observe - Analyze - Monitor. A systematic approach to problem solving and strategic thinking.</p>
         </div>
         <div class="methodology-card">
+          <div class="methodology-icon">🌊</div>
           <h3>Growth & Flow Mindset</h3>
-          <p>Cultivating resilience and the state of flow in work and life.</p>
+          <p>Cultivating resilience and the state of flow to achieve peak performance in work and life.</p>
         </div>
         <div class="methodology-card">
+          <div class="methodology-icon">📈</div>
           <h3>Kaizen</h3>
-          <p>Continuous incremental improvement for excellence.</p>
+          <p>The philosophy of continuous incremental improvement to achieve long-term excellence.</p>
         </div>
       </div>
     </div>
@@ -53,54 +73,144 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .program-hero {
-    padding: 10rem 0 6rem;
-    background: linear-gradient(135deg, var(--gold) 0%, #F4A000 100%);
-    color: white;
-    text-align: center;
-  }
-  
-  .program-hero h1 { 
-    color: white; 
-    margin: 1rem 0; 
-  }
-  
-  .program-hero .section-label { 
-    color: white; 
-  }
-  
-  .hero-subtitle { 
-    font-size: 1.3rem; 
-    max-width: 700px; 
-    margin: 0 auto; 
-    opacity: 0.95; 
-    color: white; 
-  }
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
 
-  .content-placeholder {
-    text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+  /* Two Column Layout */
+  .two-col-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 800px;
+    padding: 3rem 0;
   }
 
+  .content-col h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .content-col p {
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+  }
+
+  .yoga-sutra {
+    background: var(--sand);
+    padding: 2rem;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+  }
+
+  .yoga-sutra p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+
+  /* Feature Box */
+  .feature-box {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .limbs-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .limbs-list li {
+    padding: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .limbs-list li::before {
+    content: '○';
+    color: var(--gold);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Methodology Grid */
   .methodology-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
   }
 
   .methodology-card {
     background: white;
-    padding: 2.5rem;
+    padding: 3rem 2.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
     text-align: center;
+    border: 1px solid rgba(244, 180, 26, 0.15);
+    transition: transform 0.3s ease;
   }
 
-  .methodology-card h3 { color: var(--gold-dark); margin-bottom: 1rem; }
+  .methodology-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .methodology-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .methodology-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .two-col-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .methodology-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .methodology-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-col h2, .section-header h2 {
+      font-size: 2.2rem;
+    }
+  }
 </style>

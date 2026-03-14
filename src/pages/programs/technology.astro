@@ -1,90 +1,217 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProgramHero from '../../components/ProgramHero.astro';
 ---
 
-<BaseLayout title="Technology Program - 10YEC Youth Excellence Center">
-  <section class="program-hero">
+<BaseLayout title="Technology & Innovation - 10YEC Youth Excellence Center">
+  <ProgramHero 
+    title="Innovating the Future" 
+    subtitle="Preparing youth for the future with hands-on experiences in cutting-edge technologies, robotics, AI, and startup acceleration."
+    label="TECHNOLOGY"
+    gradient="linear-gradient(135deg, var(--blue) 0%, #1565C0 100%)"
+  />
+
+  <!-- Overview Section -->
+  <section class="section">
     <div class="container">
-      <div class="program-hero-content">
-        <span class="section-label">TECHNOLOGY</span>
-        <h1>Innovating the Future</h1>
-        <p class="hero-subtitle">
-          Preparing youth for the future with hands-on experiences in cutting-edge technologies, 
-          robotics, AI, and startup acceleration.
-        </p>
+      <div class="two-col-layout">
+        <div class="content-col">
+          <h2 id="robotics">Robotics & Engineering</h2>
+          <p>
+            Hands-on engineering and programming experience. Our robotics program introduces 
+            students to the fundamentals of mechanics, electronics, and software development, 
+            allowing them to bring their ideas to life through physical builds.
+          </p>
+          <div class="yoga-sutra">
+            <p>"The best way to predict the future is to invent it."</p>
+          </div>
+        </div>
+        <div class="visual-col">
+          <div class="feature-box">
+            <div class="feature-icon">🤖</div>
+            <h3>What We Cover</h3>
+            <ul class="limbs-list">
+              <li>Mechanical Design & Assembly</li>
+              <li>Sensor Integration</li>
+              <li>Microcontroller Programming</li>
+              <li>AI in Robotics</li>
+              <li>Competitive Problem Solving</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="robotics">
+  <!-- Innovation Sections -->
+  <section class="section">
     <div class="container">
       <div class="section-header text-center">
-        <h2>Robotics</h2>
-        <p>Hands-on engineering and programming experience.</p>
+        <span class="section-label">INNOVATION</span>
+        <h2>Building for Tomorrow</h2>
+        <p>From rapid prototyping to launching real-world solutions</p>
       </div>
-      <div class="content-placeholder">
-        <p>Content for Robotics program including curriculum, kits used, and competition details.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="ai-hackathon">
-    <div class="container">
-      <div class="section-header text-center">
-        <h2>AI Hackathon</h2>
-        <p>Solving real-world problems with Artificial Intelligence.</p>
-      </div>
-      <div class="content-placeholder">
-        <p>Content for AI Hackathon events, themes, and past project showcases.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="accelerator">
-    <div class="container">
-      <div class="section-header text-center">
-        <h2>Startup Accelerator</h2>
-        <p>Launch your tech idea into a real business.</p>
-      </div>
-      <div class="content-placeholder">
-        <p>Details about the startup accelerator program, mentorship, and funding opportunities.</p>
+      
+      <div class="innovation-grid">
+        <div class="innovation-card">
+          <div class="innovation-icon">🧠</div>
+          <h3>AI Hackathons</h3>
+          <p>Solving real-world problems using Artificial Intelligence. Students work in teams to develop innovative applications.</p>
+        </div>
+        <div class="innovation-card">
+          <div class="innovation-icon">🚀</div>
+          <h3>Startup Accelerator</h3>
+          <p>Transforming tech ideas into viable businesses through mentorship, product development, and funding readiness.</p>
+        </div>
+        <div class="innovation-card">
+          <div class="innovation-icon">💻</div>
+          <h3>Future Tech Lab</h3>
+          <p>Exploration of emerging trends like Web3, Quantum Computing, and Sustainable Tech solutions.</p>
+        </div>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .program-hero {
-    padding: 10rem 0 6rem;
-    background: linear-gradient(135deg, var(--gold) 0%, #F4A000 100%);
-    color: white;
-    text-align: center;
-  }
-  
-  .program-hero h1 { 
-    color: white; 
-    margin: 1rem 0; 
-  }
-  
-  .program-hero .section-label { 
-    color: white; 
-  }
-  
-  .hero-subtitle { 
-    font-size: 1.3rem; 
-    max-width: 700px; 
-    margin: 0 auto; 
-    opacity: 0.95; 
-    color: white; 
-  }
-  
-  .content-placeholder {
-    text-align: center;
-    padding: 3rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+  /* Two Column Layout */
+  .two-col-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    max-width: 1200px;
     margin: 0 auto;
-    max-width: 800px;
+    padding: 3rem 0;
+  }
+
+  .content-col h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .content-col p {
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+  }
+
+  .yoga-sutra {
+    background: var(--sand);
+    padding: 2rem;
+    border-left: 3px solid var(--blue);
+    border-radius: 0 8px 8px 0;
+    margin-top: 2rem;
+  }
+
+  .yoga-sutra p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+  }
+
+  /* Feature Box */
+  .feature-box {
+    background: var(--cream);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .limbs-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .limbs-list li {
+    padding: 0.8rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-secondary);
+  }
+
+  .limbs-list li::before {
+    content: '○';
+    color: var(--blue);
+    position: absolute;
+    left: 0;
+  }
+
+  /* Innovation Grid */
+  .innovation-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .innovation-card {
+    background: white;
+    padding: 3rem 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.03);
+    text-align: center;
+    border: 1px solid rgba(30, 136, 229, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .innovation-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .innovation-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .innovation-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 1024px) {
+    .two-col-layout {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .innovation-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .innovation-grid {
+      grid-template-columns: 1fr;
+    }
+    .content-col h2, .section-header h2 {
+      font-size: 2.2rem;
+    }
   }
 </style>
