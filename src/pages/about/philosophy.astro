@@ -2,14 +2,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="The10 Philosophy - Zero to One">
+<BaseLayout title="10YEC Philosophy - Zero to One">
   <!-- Hero -->
   <section class="philosophy-hero">
     <div class="container text-center">
-      <span class="section-label">THE 10 FILOSOPHY</span>
+      <span class="section-label">10YEC PHILOSOPHY</span>
       <h1>From Zero to The One</h1>
       <p class="hero-subtitle">
-        The core philosophy of The 10 Youth Excellence Center is rooted in the journey of self-transformation—
+        The core philosophy of 10YEC is rooted in the journey of self-transformation—
         emptying oneself of limitations to realize infinite potential.
       </p>
     </div>
@@ -39,7 +39,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         
         <div class="concept-text">
           <p>
-            At The 10YEC, we believe that true excellence begins with humility and openness. 
+            At 10YEC, we believe that true excellence begins with humility and openness. 
             By becoming "zero"—letting go of ego, prejudices, and self-imposed limitations—we create 
             space for new knowledge, skills, and perspectives to enter.
           </p>
@@ -101,9 +101,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="integration-content">
         <div class="text-content">
           <span class="section-label">SYNERGY</span>
-          <h2>Where Ancient Wisdom Meets Modern Innovation</h2>
+          <h2>Where modern innovation is powered by ancient wisdom</h2>
           <p>
-            The 10YEC is unique in its integration of these timeless philosophical principles with 
+            10YEC is unique in its integration of these timeless philosophical principles with 
             cutting-edge modern disciplines. We don't view them as separate.
           </p>
           <p>
@@ -117,9 +117,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         </div>
         <div class="visual-content">
           <div class="venn-diagram">
-             <!-- Simplified CSS Venn Diagram -->
-             <div class="circle c1"><span>Wisdom</span></div>
-             <div class="circle c2"><span>Innovation</span></div>
+             <!-- Refined Venn Diagram Structure -->
+             <div class="circle c1"></div>
+             <div class="circle-text text-c1">Wisdom</div>
+             <div class="circle c2"></div>
+             <div class="circle-text text-c2">Innovation</div>
              <div class="center-text">10YEC</div>
           </div>
         </div>
@@ -240,36 +242,57 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .venn-diagram {
     position: relative;
-    height: 300px;
+    height: 420px; /* Reduced height to increase overlap */
     width: 300px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .circle {
     position: absolute;
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     border-radius: 50%;
-    opacity: 0.6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    opacity: 0.8;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    mix-blend-mode: multiply;
+  }
+
+  .circle-text {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-weight: 900;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
   }
 
   .c1 {
-    background: var(--gold);
+    background: #F8CB65;
     top: 0;
-    left: 50px;
+    z-index: 1;
+  }
+
+  .text-c1 {
+    top: 85px; /* Adjusted for larger overlap */
+    z-index: 10;
   }
 
   .c2 {
-    background: var(--blue);
+    background: #73B1E4;
     bottom: 0;
-    left: 50px;
+    z-index: 2;
+  }
+
+  .text-c2 {
+    bottom: 85px; /* Adjusted for larger overlap */
+    transform: translate(-50%, 50%);
+    z-index: 10;
   }
 
   .center-text {
@@ -277,11 +300,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
-    font-weight: bold;
+    z-index: 15;
+    font-weight: 900;
     color: white;
-    font-size: 1.2rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    font-size: 2.4rem; /* Slightly larger in the bigger overlap area */
+    text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    letter-spacing: 1px;
   }
 
 

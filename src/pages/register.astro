@@ -1,0 +1,316 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Event data mapped to WhatsApp links for the success state
+const programLinks = {
+  "yoga-gratitude": "https://chat.whatsapp.com/L2YEC10YEC",
+  "championship-training": "https://chat.whatsapp.com/L2YEC10YEC",
+  "national-qualifier": "https://chat.whatsapp.com/L2YEC10YEC",
+  "tech-startup": "https://chat.whatsapp.com/L2YEC10YEC"
+};
+
+const programs = [
+  { id: "yoga-gratitude", name: "Weekly Gratitude Yoga Class" },
+  { id: "championship-training", name: "Weekly Championship Training" },
+  { id: "national-qualifier", name: "National Championship Qualifier 2026" },
+  { id: "tech-startup", name: "Yoga & Tech Startup Workshop" }
+];
+---
+
+<BaseLayout title="Register - 10YEC Youth Excellence Center">
+  <section class="section register-section">
+    <div class="container form-container">
+      <div class="form-wrapper glassmorphism">
+        <div id="form-view">
+          <div class="form-header text-center">
+            <span class="section-label">JOIN US</span>
+            <h2>Event <span class="text-blue">Registration</span></h2>
+            <p>Fill out the form below to secure your spot in our upcoming events.</p>
+          </div>
+          <form id="registrationForm" class="registration-form">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="John Doe" />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="(123) 456-7890" />
+            </div>
+
+            <div class="form-group">
+              <label for="program">Program</label>
+              <select id="program" name="program" required>
+                <option value="" disabled selected>Select a program...</option>
+                {programs.map(p => (
+                  <option value={p.id}>{p.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-submit">Register Now</button>
+          </form>
+        </div>
+
+        <div id="success-view" class="success-state hidden text-center">
+          <div class="success-icon">✓</div>
+          <h2>Thank You!</h2>
+          <p>Your registration has been successfully received.</p>
+          <div class="whatsapp-card">
+            <p>Join our program-specific WhatsApp group to stay updated on event details and announcements:</p>
+            <a id="whatsappBtn" href="#" target="_blank" class="btn btn-whatsapp hide-print">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+              </svg>
+              Join WhatsApp Group
+            </a>
+          </div>
+          <button id="resetBtn" class="btn btn-outline mt-4">Register for another event</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline define:vars={{ programLinks }}>
+  document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('eventId');
+    
+    const programSelect = document.getElementById('program');
+    if (eventId && programSelect.querySelector(`option[value="${eventId}"]`)) {
+      programSelect.value = eventId;
+    }
+
+    const form = document.getElementById('registrationForm');
+    const formView = document.getElementById('form-view');
+    const successView = document.getElementById('success-view');
+    const whatsappBtn = document.getElementById('whatsappBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get selected program
+        const selectedProgram = programSelect.value;
+        const link = programLinks[selectedProgram] || "https://chat.whatsapp.com/L2YEC10YEC";
+        
+        // Update whatsapp link
+        if (whatsappBtn) {
+          whatsappBtn.href = link;
+        }
+        
+        // Transition out form and in success state
+        const btn = form.querySelector('.btn-submit');
+        if (btn) {
+          const originalText = btn.textContent;
+          btn.textContent = "Processing...";
+          btn.style.opacity = "0.8";
+          btn.disabled = true;
+
+          setTimeout(() => {
+            formView.classList.add('hidden');
+            successView.classList.remove('hidden');
+            successView.classList.add('fade-in');
+            
+            btn.textContent = originalText;
+            btn.style.opacity = "1";
+            btn.disabled = false;
+            form.reset();
+          }, 800);
+        }
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        successView.classList.add('hidden');
+        formView.classList.remove('hidden');
+        formView.classList.add('fade-in');
+      });
+    }
+  });
+</script>
+
+<style>
+  .register-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background: var(--gradient-hero, linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%));
+    padding: 6rem 0;
+  }
+
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .form-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .form-header p {
+    color: var(--text-secondary, #555);
+    margin-top: 0.5rem;
+  }
+
+  .registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: var(--text-primary, #333);
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.8);
+    font-family: inherit;
+    font-size: 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: var(--blue, #0d47a1);
+    box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+    background: #fff;
+  }
+
+  .btn-submit {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    background-color: var(--blue, #0d47a1);
+    color: white;
+  }
+  
+  .btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(13, 71, 161, 0.2);
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .success-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .success-icon {
+    width: 80px;
+    height: 80px;
+    background: #4caf50;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto 1rem;
+    animation: scaleIn 0.5s ease backwards;
+  }
+
+  .success-state h2 {
+    color: #4caf50;
+    margin-bottom: 0.5rem;
+  }
+
+  .whatsapp-card {
+    background: #fdfdfd;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+  }
+
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: #25D366;
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .btn-whatsapp:hover {
+    background: #1ebd5a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(37, 211, 102, 0.3);
+  }
+
+  .fade-in {
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes scaleIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .glassmorphism {
+      padding: 2rem;
+    }
+  }
+</style>

@@ -2,14 +2,14 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Vision & Purpose - The10 Youth Excellence Center">
+<BaseLayout title="Vision & Purpose - 10YEC Youth Excellence Center">
   <!-- Hero -->
   <section class="vision-hero">
     <div class="container text-center">
       <span class="section-label">VISION & PURPOSE</span>
       <h1>Designing Excellence in You<br>and the World Around You</h1>
       <p class="hero-subtitle">
-        The 10 Youth Excellence Center envisions a world where young individuals master their minds, 
+        10YEC envisions a world where young individuals master their minds, 
         act with clarity, and design lives and enterprises rooted in excellence, purpose, and oneness.
       </p>
     </div>
@@ -20,17 +20,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container-narrow">
       <div class="vision-content">
         <div class="mandala-icon">
-          <svg viewBox="0 0 200 200" width="120" height="120">
-            <circle cx="100" cy="100" r="80" fill="none" stroke="url(#visionGradient)" stroke-width="2" opacity="0.3"/>
-            <circle cx="100" cy="100" r="60" fill="none" stroke="url(#visionGradient)" stroke-width="2" opacity="0.5"/>
-            <circle cx="100" cy="100" r="40" fill="none" stroke="url(#visionGradient)" stroke-width="2" opacity="0.7"/>
-            <circle cx="100" cy="100" r="20" fill="url(#visionGradient)"/>
+          <svg viewBox="0 0 300 300" width="120" height="120">
             <defs>
-              <linearGradient id="visionGradient">
+              <linearGradient id="centerGradient" x1="0%" y1="50%" x2="100%" y2="50%">
                 <stop offset="0%" stop-color="#F4B41A"/>
                 <stop offset="100%" stop-color="#1E88E5"/>
               </linearGradient>
+              <linearGradient id="ringGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+                <stop offset="0%" stop-color="#F4B41A" stop-opacity="0.6"/>
+                <stop offset="100%" stop-color="#1E88E5" stop-opacity="0.6"/>
+              </linearGradient>
             </defs>
+            <!-- Outer Ring -->
+            <circle cx="150" cy="150" r="110" fill="none" stroke="url(#ringGradient)" stroke-width="2"/>
+            <!-- Middle Ring -->
+            <circle cx="150" cy="150" r="80" fill="none" stroke="url(#ringGradient)" stroke-width="2"/>
+            <!-- Inner Ring -->
+            <circle cx="150" cy="150" r="50" fill="none" stroke="url(#ringGradient)" stroke-width="2"/>
+            <!-- Center Solid Circle -->
+            <circle cx="150" cy="150" r="22" fill="url(#centerGradient)"/>
           </svg>
         </div>
         
@@ -76,7 +84,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="section-label">OUR APPROACH</span>
         <h2>Our Philosophy of Growth</h2>
         <p>
-          At The 10 Youth Excellence Center, we believe in a holistic approach to growth—
+          At 10YEC, we believe in a holistic approach to growth—
           rooted in deep inner mastery and mindful action.
         </p>
       </div>
@@ -135,22 +143,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- The10 Philosophy -->
-  <section class="section philosophy-deep">
+  <!-- 10YEC Philosophy -->
+  <section class="section">
     <div class="container-narrow text-center">
       <div class="section-header">
-        <span class="section-label">THE CORE PRINCIPLE</span>
-        <h2>The10 Philosophy</h2>
+        <span class="section-label">10YEC PHILOSOPHY</span>
+        <h2>The Core Principle</h2>
       </div>
 
       <div class="philosophy-circle">
         <div class="circle-graphic">
-          <svg viewBox="0 0 300 300" width="300" height="300">
-            <circle cx="150" cy="150" r="140" fill="none" stroke="url(#philosophyGrad)" stroke-width="3" opacity="0.2"/>
-            <circle cx="150" cy="150" r="110" fill="none" stroke="url(#philosophyGrad)" stroke-width="2" opacity="0.4"/>
-            <circle cx="150" cy="150" r="80" fill="url(#philosophyGrad)" opacity="0.1"/>
-            <text x="150" y="140" text-anchor="middle" font-size="24" fill="#4A4238" font-family="Playfair Display">THE</text>
-            <text x="150" y="175" text-anchor="middle" font-size="80" fill="url(#philosophyGrad)" font-family="Playfair Display" font-weight="700">10</text>
+          <svg viewBox="0 0 300 300" width="240" height="240">
+            <circle cx="150" cy="150" r="140" fill="none" stroke="url(#philosophyGrad)" stroke-width="2" opacity="0.3"/>
+            <circle cx="150" cy="150" r="100" fill="none" stroke="url(#philosophyGrad)" stroke-width="2" opacity="0.5"/>
+            <text x="150" y="165" text-anchor="middle" font-size="60" fill="url(#philosophyGrad)" font-family="Playfair Display" font-weight="700">0 → 1</text>
             <defs>
               <linearGradient id="philosophyGrad">
                 <stop offset="0%" stop-color="#F4B41A"/>
@@ -368,10 +374,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin: 1rem 0;
   }
 
-  .philosophy-deep {
-    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  }
-
   .circle-graphic {
     margin: 2rem auto;
   }
@@ -407,7 +409,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
     margin-top: 3rem;
   }

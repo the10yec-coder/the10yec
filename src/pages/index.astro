@@ -2,21 +2,70 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import triadImage from '../assets/images/triad-of-three-pillars.png';
+import yogaClassImage from '../assets/images/yoga-foundation-class.jpg';
+import trainingImage from '../assets/images/yoga-championship-training.jpg';
+import championImage from '../assets/images/banner.png';
+
+const events = [
+  {
+    id: "yoga-gratitude",
+    title: "Weekly Gratitude Yoga Class",
+    date: "SATURDAYS",
+    time: "9:30 AM (CENTRAL)",
+    location: "THE10YEC RANCH, FRISCO, TX",
+    image: yogaClassImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    bgColor: "#fdf5e6",
+    objectPosition: "center 20%" // Manual crop control
+  },
+  {
+    id: "championship-training",
+    title: "Weekly Championship Training",
+    date: "SUNDAYS",
+    time: "11:00 AM (CENTRAL)",
+    location: "THE10YEC RANCH, FRISCO, TX",
+    image: trainingImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    bgColor: "#e3f2fd",
+    objectPosition: "center center"
+  },
+  {
+    id: "national-qualifier",
+    title: "National Championship Qualifier 2026",
+    date: "APRIL 4, 2026",
+    time: "9:00 AM",
+    location: "THE10YEC RANCH, FRISCO, TX",
+    image: championImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    bgColor: "#fdf5e6",
+    objectPosition: "center 30%"
+  },
+  {
+    id: "tech-startup",
+    title: "Yoga & Tech Startup Workshop",
+    date: "MAY 15, 2026",
+    time: "10:00 AM",
+    location: "THE10YEC RANCH, FRISCO, TX",
+    image: yogaClassImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    bgColor: "#e3f2fd",
+    objectPosition: "center center"
+  }
+];
 ---
 
-<BaseLayout title="The10 Youth Excellence Center - Yoga, Technology & Entrepreneurship">
+<BaseLayout title="10YEC Youth Excellence Center - Yoga, Technology & Entrepreneurship">
   <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
       <div class="hero-text">
         <div class="hero-label">GRATITUDE. YOUTH EXCELLENCE.</div>
         <h1>
-          Where <span class="text-gold">Ancient Wisdom</span><br>
-          Meets <span class="text-blue">Modern Innovation</span>
+          Where <span class="text-blue">modern innovation</span><br>
+          is powered by <span class="text-gold">ancient wisdom</span>
         </h1>
         <p class="hero-subtitle">
-          <strong>Youth Entrepreneurship and Excellence with Yogic Powers</strong><br>
-          Samyama, Yama and Niyama
+          <strong>Cultivating next generation youth entrepreneurs for the AI era using Yogic Powers</strong>
         </p>
         <p class="hero-description">
           Empowering the next generation through the integration of yoga, technology, 
@@ -27,55 +76,54 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
           <a href="/#programs" class="btn btn-primary">Explore Programs</a>
           <a href="/about/philosophy" class="btn btn-outline">Our Philosophy</a>
         </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="stat-number">4</div>
-            <div class="stat-label">Core Pillars</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">100+</div>
-            <div class="stat-label">Youth Empowered</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number">2</div>
-            <div class="stat-label">Locations</div>
-          </div>
-        </div>
       </div>
 
 
     </div>
   </section>
 
-  <!-- Why The10 Exists -->
-  <section id="about" class="section reveal">
-    <div class="container text-center">
-      <div class="section-header">
-        <span class="section-label">OUR MISSION</span>
-        <h2>Why The <span class="text-gradient-gold">10YEC</span> Exists</h2>
-        <p>We are addressing three critical challenges facing today's youth through ancient wisdom and modern application.</p>
+  <!-- Upcoming Events Section -->
+  <section id="events" class="section events-section reveal">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="events-title">Upcoming <span class="text-blue">Events</span></h2>
       </div>
 
-      <div class="challenges-grid">
-        <div class="challenge-card shadow-premium-hover reveal-stagger">
-          <div class="challenge-icon">🧠</div>
-          <h3>1. Mind Control</h3>
-          <h4>Harness the Power of Mind (Samyama)</h4>
-          <p>We restore the 'human' superpower with Samyama. Achieve Total Mind Control for excellence in every endeavor.</p>
-        </div>
+      <div class="events-scroll-wrapper">
+        <div class="events-slider" id="eventsSlider">
+          {events.map(event => (
+            <div class="event-card" style={`background-color: ${event.bgColor};`}>
+              <div class="event-info">
+                <h3>{event.title}</h3>
+                <p class="event-time">{event.date} · {event.time}</p>
+                <div class="event-location-pin">
+                  <span class="pin-icon">📍</span>
+                  <span>{event.location}</span>
+                </div>
+              </div>
+              
+              <div class="event-image-container">
+                <Image src={event.image} alt={event.title} class="event-img" style={`object-position: ${event.objectPosition || 'center'};`} />
+              </div>
 
-        <div class="challenge-card shadow-premium-hover reveal-stagger">
-          <div class="challenge-icon">🌍</div>
-          <h3>2. Social Consciousness</h3>
-          <h4>Conscious entrepreneurship (Yama and Niyama)</h4>
-          <p>In a world of growing inequality & divisiveness, we need socially conscious 'youth entrepreneurs' grounded in Yama & Niyama.</p>
+              <div class="event-actions">
+                <a href={`/register?eventId=${event.id}`} class="btn btn-event-form">Register Now</a>
+              </div>
+            </div>
+          ))}
         </div>
-
-        <div class="challenge-card shadow-premium-hover reveal-stagger">
-          <div class="challenge-icon">🔗</div>
-          <h3>3. Connected Learning</h3>
-          <h4>Unify science, spirituality, entrepreneurship, faith and holistic wellness</h4>
-          <p>We offer canonical & freedom learning to connect the dots. There are infinite ways to get to Infinity!</p>
+        
+        <div class="slider-nav">
+          <button class="slider-btn prev-btn" id="scrollLeft" aria-label="Previous events">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="slider-btn next-btn" id="scrollRight" aria-label="Next events">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -85,7 +133,7 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
   <section class="section programs-section triad-section reveal">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-label">THE 10YEC SOLUTION</span>
+        <span class="section-label">10YEC SOLUTION</span>
         <h2>Triad of <span class="text-gradient-gold">3 Pillars</span></h2>
         <p>Three interconnected pathways to personal growth, community impact, and purposeful innovation</p>
       </div>
@@ -96,130 +144,12 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
     </div>
   </section>
 
-  <!-- Programs Section -->
-  <section id="programs" class="section programs-cards-section reveal">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="section-label">OUR PROGRAMS</span>
-        <h2>Explore Our <span class="text-gold">Programs</span></h2>
-        <p>Discover the four pillars of excellence that guide our holistic approach to youth development</p>
-      </div>
-
-      <div class="programs-grid">
-        <div class="program-card shadow-premium-hover reveal-stagger">
-          <div class="program-icon">🧘</div>
-          <h3>Yoga & Wellness</h3>
-          <p>
-            Establishing a strong physical and mental foundation through Yoga Foundation Camps & Classes. 
-            Express yourself through Yoga Dance Flows and compete at the highest level.
-          </p>
-          <ul class="program-features">
-            <li>Yoga Foundation Camps & Classes</li>
-            <li>Yoga Dance Flows</li>
-            <li>Championship Coaching</li>
-          </ul>
-          <a href="/programs/yoga" class="program-link">Learn More →</a>
-        </div>
-
-        <div class="program-card shadow-premium-hover reveal-stagger">
-          <div class="program-icon">💡</div>
-          <h3>Entrepreneurship</h3>
-          <p>
-            Building the next generation of innovators through comprehensive Foundation & Leadership Camps, 
-            Public Speaking, and proven methodologies.
-          </p>
-          <ul class="program-features">
-            <li>Leadership Camps</li>
-            <li>Public Speaking</li>
-            <li>I-O-A-M Framework</li>
-          </ul>
-          <a href="/programs/entrepreneurship" class="program-link">Learn More →</a>
-        </div>
-
-        <div class="program-card shadow-premium-hover reveal-stagger">
-          <div class="program-icon">🤖</div>
-          <h3>Technology</h3>
-          <p>
-            Preparing youth for the future with hands-on experiences in cutting-edge technologies, 
-            robotics, AI, and startup acceleration.
-          </p>
-          <ul class="program-features">
-            <li>Robotics</li>
-            <li>AI Hackathons</li>
-            <li>Startup Accelerator</li>
-          </ul>
-          <a href="/programs/technology" class="program-link">Learn More →</a>
-        </div>
-
-        <div class="program-card shadow-premium-hover reveal-stagger">
-          <div class="program-icon">🌟</div>
-          <h3>Sharing & Service</h3>
-          <p>
-            Creating meaningful impact through Humanitarian Projects, community leadership, 
-            and structured frameworks for positive change.
-          </p>
-          <ul class="program-features">
-            <li>Humanitarian Projects</li>
-            <li>Community Leadership</li>
-            <li>SEWA Framework</li>
-          </ul>
-          <a href="/programs/sharing" class="program-link">Learn More →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section id="resources" class="section philosophy-section">
-    <div class="container-narrow text-center">
-      <div class="section-header">
-        <span class="section-label">OUR PHILOSOPHY</span>
-        <h2>Designing Excellence in You</h2>
-      </div>
-
-      <div class="philosophy-quote">
-        <svg class="quote-mark" width="60" height="60" viewBox="0 0 60 60">
-          <path d="M20 30c0-5.523 4.477-10 10-10V10C18.954 10 10 18.954 10 30s8.954 20 20 20v-10c-5.523 0-10-4.477-10-10z" fill="currentColor" opacity="0.2"/>
-        </svg>
-        <p>"We have to become zero to become 'The One'"</p>
-        <span class="philosophy-author">— THE10 PHILOSOPHY</span>
-      </div>
-
-      <div class="growth-framework">
-        <h3>Our Philosophy of Growth</h3>
-        <p>At The 10 Youth Excellence Center, we believe in a holistic approach to growth—rooted in deep inner mastery and mindful action.</p>
-        
-        <div class="framework-steps">
-          <div class="framework-step">
-            <div class="step-icon">💡</div>
-            <h4>Insight</h4>
-            <p>Seeing clearly—understanding oneself, the world, and the systems we live in.</p>
-          </div>
-          <div class="arrow">→</div>
-          <div class="framework-step">
-            <div class="step-icon">🧘</div>
-            <h4>Action</h4>
-            <p>Translating awareness into disciplined, ethical, and purposeful action.</p>
-          </div>
-          <div class="arrow">→</div>
-          <div class="framework-step">
-            <div class="step-icon">🎯</div>
-            <h4>Outcomes & Impact</h4>
-            <p>Creating measurable change in personal life, profession, community, and society.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- Centers Section -->
-  <section class="section centers-section">
+  <!-- Centers Section (Location) -->
+  <section id="locations" class="section centers-section reveal">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-label">OUR LOCATIONS</span>
-        <h2>The 10YEC Centers</h2>
+        <h2>10YEC Centers</h2>
       </div>
 
       <div class="centers-grid">
@@ -227,7 +157,7 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
           <div class="center-image">
             <div class="image-placeholder">
               <span>🏘️</span>
-              <p>The 10YEC Ranch</p>
+              <p>10YEC Ranch</p>
             </div>
           </div>
           <div class="center-content">
@@ -266,15 +196,238 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
     </div>
   </section>
 
+  <!-- Partners Section -->
+  <section class="section partners-section reveal">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">PARTNERS</span>
+        <h2>Our Collaborators</h2>
+        <p>Working together to empower the next generation</p>
+      </div>
+      <div class="partners-logo-grid">
+        <!-- Add partner logos here -->
+        <div class="partner-placeholder">Your Partner Logo</div>
+        <div class="partner-placeholder">Your Partner Logo</div>
+        <div class="partner-placeholder">Your Partner Logo</div>
+        <div class="partner-placeholder">Your Partner Logo</div>
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .hero {
-    min-height: 100vh;
+  /* Events Section */
+  .events-section {
+    background: #fffcf7;
+    padding: 6rem 0;
+  }
+
+  .events-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .events-scroll-wrapper {
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .events-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    padding: 0.5rem; /* Space for box-shadows */
+    /* Removed scroll-snap for smoother JS controlled infinite looping */
+    scroll-behavior: smooth;
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .event-card {
+    flex: 0 0 calc(33.333% - 1.33rem); /* Show 3 cards by default on desktop */
+    min-width: 350px;
+    scroll-snap-align: start;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+  }
+
+  .slider-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .slider-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
     align-items: center;
-    padding: 8rem 0 4rem;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--blue);
+    transition: all 0.3s ease;
+  }
+
+  .slider-btn:hover {
+    background: var(--blue);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(13, 71, 161, 0.2);
+  }
+
+  @media (max-width: 1100px) {
+    .event-card {
+      flex: 0 0 calc(50% - 1rem); /* 2 cards on tablet */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .event-card {
+      flex: 0 0 100%; /* 1 card on mobile */
+      min-width: 280px;
+    }
+  }
+
+  .event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  }
+
+  .event-info h3 {
+    font-size: 1.5rem; /* Slightly smaller to fit better */
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: #000;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .event-time {
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.4rem;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .event-location-pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #444;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .pin-icon {
+    font-size: 1.1rem;
+  }
+
+  .event-image-container {
+    width: 100%;
+    height: 200px; /* Balanced height */
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .event-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  .btn-event-form {
+    background: var(--blue);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn-event-whatsapp {
+    background: #25D366; /* WhatsApp Green */
+    color: white;
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .btn-event-form:hover, .btn-event-whatsapp:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+  }
+
+  /* Partners Section */
+  .partners-section {
+    background: #fff;
+    padding: 6rem 0;
+  }
+
+  .partners-logo-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+  }
+
+  .partner-placeholder {
+    font-weight: 700;
+    color: #ccc;
+    font-size: 1.2rem;
+    border: 2px dashed #eee;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+  }
+
+  /* Existing Styles Refinement */
+  /* Hero Section */
+  .hero {
+    min-height: 85vh; /* Reduced from 100vh for better fold visibility */
+    display: flex;
+    align-items: center;
+    padding: 10rem 0 4rem; /* Increased top padding to clear navbar */
     background: var(--gradient-hero);
     position: relative;
     overflow: hidden;
@@ -366,6 +519,8 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
     color: var(--text-secondary);
     margin-top: 0.5rem;
   }
+  
+  /* Stats removed from Hero */
 
   /* Hero Visual */
   .hero-visual {
@@ -837,27 +992,250 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
   }
 
   @media (max-width: 768px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+
     .hero {
-      padding: 6rem 0 3rem;
+      padding: 6.5rem 0 2rem; /* Adjusted for reduced mobile navbar height */
+      min-height: auto;
     }
 
-
-    .framework-steps {
-      flex-direction: column;
-      gap: 1rem;
+    .hero-text h1 {
+      font-size: 2rem; /* Reduced for better fit */
+      line-height: 1.1;
+      margin-bottom: 1rem;
     }
 
-    .programs-grid {
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .hero-description {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      padding: 0 0.5rem;
+    }
+
+    /* Upcoming Events Mobile */
+    .events-grid {
       grid-template-columns: 1fr;
+      gap: 1.5rem;
     }
 
-    .challenges-grid {
-      grid-template-columns: 1fr;
+    .event-card {
+      padding: 1.25rem;
+    }
+
+    .events-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Triad Mobile */
+    .triad-visual {
+      margin-top: 2rem;
+      padding: 0 1rem;
     }
     
+    .triad-img {
+      max-width: 100%;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+    }
+
+    /* Growth Framework Mobile */
+    .framework-steps {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .framework-step {
+      width: 100%;
+      min-width: unset;
+    }
+
     .arrow {
       transform: rotate(90deg);
       margin: 0.5rem 0;
+      font-size: 2rem;
+    }
+
+    /* Centers Mobile */
+    .centers-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .center-image {
+      height: 200px;
+    }
+
+    /* Partners Mobile */
+    .partners-logo-grid {
+      gap: 2rem;
+      flex-direction: column;
+    }
+  }
+
+  /* Extra small screens */
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .hero {
+      padding: 6rem 0 1.5rem; /* Sufficient top padding for fixed navbar */
+    }
+
+    .hero-text h1 {
+      font-size: 1.7rem; 
+    }
+
+    .hero-label {
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-buttons {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .hero-buttons .btn {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-stats {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
     }
   }
 </style>
+
+<script>
+  // Events Slider Navigation (Infinite Scroll)
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('eventsSlider');
+    const scrollLeftBtn = document.getElementById('scrollLeft');
+    const scrollRightBtn = document.getElementById('scrollRight');
+
+    if (slider && scrollLeftBtn && scrollRightBtn) {
+      let isTransitioning = false;
+      
+      // Calculate scroll amount based on card width + gap
+      // The CSS defines flex basis and minimum width, we'll measure actual card width
+      const getScrollAmount = () => {
+        const firstCard = slider.querySelector('.event-card');
+        if (!firstCard) return 380;
+        
+        // Include gap in calculation (gap is 2rem = ~32px)
+        const style = window.getComputedStyle(slider);
+        const gap = parseInt(style.gap) || 32;
+        return firstCard.clientWidth + gap;
+      };
+
+      scrollLeftBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+        
+        const scrollAmount = getScrollAmount();
+        
+        // If at the very beginning, smoothly scroll to end then snap
+        if (slider.scrollLeft <= 10) {
+          isTransitioning = true;
+          // Move the last element to the beginning
+          const lastChild = slider.lastElementChild;
+          if (lastChild) {
+            // Momentarily disable scroll snap and smooth behavior
+            slider.style.scrollBehavior = 'auto';
+            slider.style.scrollSnapType = 'none';
+            
+            // Move item
+            slider.prepend(lastChild);
+            
+            // Adjust scroll position so it feels like we haven't moved
+            slider.scrollLeft += scrollAmount;
+            
+            // Re-enable smooth scroll and actually animate
+            requestAnimationFrame(() => {
+              slider.style.scrollBehavior = 'smooth';
+              slider.style.scrollSnapType = 'x mandatory';
+              slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+              
+              setTimeout(() => { isTransitioning = false; }, 400);
+            });
+          } else {
+             isTransitioning = false;
+          }
+        } else {
+          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+      });
+
+      scrollRightBtn.addEventListener('click', () => {
+        if (isTransitioning) return;
+
+        const scrollAmount = getScrollAmount();
+        
+        // If at the very end
+        if (Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth - 10) {
+          isTransitioning = true;
+          
+          // Move the first element to the end
+          const firstChild = slider.firstElementChild;
+          if (firstChild) {
+            slider.style.scrollBehavior = 'auto';
+            slider.style.scrollSnapType = 'none';
+            
+            slider.append(firstChild);
+            
+            slider.scrollLeft -= scrollAmount;
+            
+            requestAnimationFrame(() => {
+              slider.style.scrollBehavior = 'smooth';
+              slider.style.scrollSnapType = 'x mandatory';
+              slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+              
+              setTimeout(() => { isTransitioning = false; }, 400);
+            });
+          } else {
+            isTransitioning = false;
+          }
+        } else {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      });
+      
+      // Optional: Hide buttons if not enough content to scroll initially
+      // But since we are infinite, we generally want to keep them if there are > 1 cards
+      const checkScrollable = () => {
+          if (slider.children.length <= 1) {
+              scrollLeftBtn.style.display = 'none';
+              scrollRightBtn.style.display = 'none';
+          } else {
+              scrollLeftBtn.style.display = 'flex';
+              scrollRightBtn.style.display = 'flex';
+          }
+      };
+      
+      checkScrollable();
+      // Use ResizeObserver for more robust width checking instead of just window resize
+      new ResizeObserver(checkScrollable).observe(slider);
+    }
+  });
+</script>
+
