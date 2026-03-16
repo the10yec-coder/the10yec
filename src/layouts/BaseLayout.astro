@@ -1,4 +1,4 @@
----
+﻿---
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import logoImage from '../assets/images/logo.png';
@@ -8,7 +8,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "10YEC Youth Excellence Center - Empowering youth through Yoga, Technology, Entrepreneurship, and Community Service" } = Astro.props;
+const { title, description = "The10YEC Youth Excellence Center - Empowering youth through Yoga, Technology, Entrepreneurship, and Community Service" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -19,15 +19,15 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
   <meta name="description" content={description}>
   
   <!-- SEO Meta Tags -->
-  <meta name="keywords" content="youth excellence, yoga, technology, entrepreneurship, community service, youth development, leadership, wellness, education, 10YEC">
-  <meta name="author" content="10YEC Youth Excellence Center">
+  <meta name="keywords" content="youth excellence, yoga, technology, entrepreneurship, community service, youth development, leadership, wellness, education, The10YEC">
+  <meta name="author" content="The10YEC Youth Excellence Center">
   <meta name="robots" content="index, follow">
   
   <!-- OpenGraph Meta Tags -->
   <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
-  <meta property="og:site_name" content="10YEC Youth Excellence Center">
+  <meta property="og:site_name" content="The10YEC Youth Excellence Center">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="/logo.png">
   
@@ -58,7 +58,7 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
   <nav class="nav">
     <div class="container nav-container">
       <a href="/" class="logo">
-        <Image src={logoImage} alt="10YEC YEC Logo" class="logo-image" loading="eager" />
+        <Image src={logoImage} alt="The10YEC YEC Logo" class="logo-image" loading="eager" />
       </a>
       
       <button class="nav-toggle" aria-label="Toggle navigation" id="navToggle">
@@ -74,7 +74,7 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
           <a href="/#about">About</a>
           <ul class="dropdown-menu">
             <li><a href="/about/vision">Vision & Purpose</a></li>
-            <li><a href="/about/philosophy">10YEC Philosophy</a></li>
+            <li><a href="/about/philosophy">The10YEC Philosophy</a></li>
             <li><a href="/about/accomplishments">Accomplishments</a></li>
             <li><a href="/about/team">Team</a></li>
           </ul>
@@ -123,19 +123,19 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
       <div class="footer-grid">
         <div class="footer-col">
           <div class="footer-logo">
-            <span class="logo-text"><span class="logo-highlight">10YEC</span></span>
+            <span class="logo-text"><span class="logo-highlight">The10YEC</span></span>
             <p class="footer-tagline">Modern Innovation. Ancient Wisdom. You.</p>
           </div>
           <p class="footer-description">
             Empowering youth by powering modern innovation with ancient yogic wisdom in technology and entrepreneurship.
           </p>
           <div class="footer-social">
-            <a href="https://www.youtube.com/@10YEC" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <a href="https://www.youtube.com/@The10YEC" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
               </svg>
             </a>
-            <a href="https://www.instagram.com/10YEC" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/The10YEC" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
@@ -147,7 +147,7 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
                 <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
               </svg>
             </a>
-            <a href="https://www.linkedin.com/company/10YEC" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/The10YEC" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
                 <rect x="2" y="9" width="4" height="12"/>
@@ -172,7 +172,7 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
           <ul>
             <li><a href="/resources/sutras">Sutras & Teachings</a></li>
             <li><a href="/resources/practices">Practices & Tools</a></li>
-            <li><a href="/about/philosophy">10YEC Philosophy</a></li>
+            <li><a href="/about/philosophy">The10YEC Philosophy</a></li>
             <li><a href="/about/team">Our Team</a></li>
           </ul>
         </div>
@@ -190,14 +190,14 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <span>10YEC@gmail.com</span>
+              <span>The10YEC@gmail.com</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2024 10YEC Youth Excellence Center. All rights reserved.</p>
+        <p>&copy; 2024 The10YEC Youth Excellence Center. All rights reserved.</p>
         <div class="footer-links">
           <a href="/privacy">Privacy Policy</a>
           <a href="/terms">Terms of Service</a>
@@ -683,15 +683,21 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (this: HTMLAnchorElement, e: Event) {
-        e.preventDefault();
         const href = this.getAttribute('href');
-        if (href) {
-          const target = document.querySelector(href);
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
+        
+        // Only intercept if it's still an internal anchor (starts with # and not just #)
+        if (href && href.startsWith('#') && href.length > 1) {
+          e.preventDefault();
+          try {
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          } catch (err) {
+            console.warn('Smooth scroll failed: invalid selector', href);
           }
         }
       });
@@ -699,4 +705,5 @@ const { title, description = "10YEC Youth Excellence Center - Empowering youth t
   </script>
 </body>
 </html>
+
 

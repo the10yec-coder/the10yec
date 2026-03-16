@@ -5,6 +5,7 @@ import triadImage from '../assets/images/triad-of-three-pillars.png';
 import yogaClassImage from '../assets/images/yoga-foundation-class.jpg';
 import trainingImage from '../assets/images/yoga-championship-training.jpg';
 import championImage from '../assets/images/banner.png';
+import ranchHeroImage from '../assets/images/ranch-hero.png';
 
 const events = [
   {
@@ -12,9 +13,9 @@ const events = [
     title: "Weekly Gratitude Yoga Class",
     date: "SATURDAYS",
     time: "9:30 AM (CENTRAL)",
-    location: "THE10YEC RANCH, FRISCO, TX",
+    location: "The10YEC BRANCH, FRISCO, TX",
     image: yogaClassImage,
-    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#fdf5e6",
     objectPosition: "center 20%" // Manual crop control
   },
@@ -23,9 +24,9 @@ const events = [
     title: "Weekly Championship Training",
     date: "SUNDAYS",
     time: "11:00 AM (CENTRAL)",
-    location: "THE10YEC RANCH, FRISCO, TX",
+    location: "The10YEC BRANCH, FRISCO, TX",
     image: trainingImage,
-    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
     objectPosition: "center center"
   },
@@ -34,9 +35,9 @@ const events = [
     title: "National Championship Qualifier 2026",
     date: "APRIL 4, 2026",
     time: "9:00 AM",
-    location: "THE10YEC RANCH, FRISCO, TX",
+    location: "The10YEC BRANCH, FRISCO, TX",
     image: championImage,
-    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#fdf5e6",
     objectPosition: "center 30%"
   },
@@ -45,16 +46,35 @@ const events = [
     title: "Yoga & Tech Startup Workshop",
     date: "MAY 15, 2026",
     time: "10:00 AM",
-    location: "THE10YEC RANCH, FRISCO, TX",
+    location: "The10YEC BRANCH, FRISCO, TX",
     image: yogaClassImage,
-    whatsappLink: "https://chat.whatsapp.com/L2YEC10YEC",
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
     objectPosition: "center center"
   }
 ];
+
+const partners = [
+  { name: "Partner 1", logo: "/logo1.png" },
+  { name: "Partner 2", logo: "/logo2.png" },
+  { name: "Partner 3", logo: "/logo3.png" },
+  { name: "Partner 4", logo: "/logo4.png" },
+  { name: "Partner 5", logo: "/logo5.png" },
+  { name: "Partner 6", logo: "/logo6.png" },
+  { name: "Partner 7", logo: "/logo7.png" },
+  { name: "Partner 8", logo: "/logo8.png" },
+  { name: "Partner 9", logo: "/logo9.png" },
+  { name: "Partner 10", logo: "/logo10.png" },
+  { name: "Partner 11", logo: "/logo11.png" },
+  { name: "Partner 12", logo: "/logo12.png" },
+  { name: "Partner 13", logo: "/logo13.png" },
+  { name: "Partner 14", logo: "/logo14.png" },
+  { name: "Partner 15", logo: "/logo15.jpg" },
+  { name: "Partner 16", logo: "/logo16.jpg" }
+];
 ---
 
-<BaseLayout title="10YEC Youth Excellence Center - Yoga, Technology & Entrepreneurship">
+<BaseLayout title="The10YEC Youth Excellence Center - Yoga, Technology & Entrepreneurship">
   <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
@@ -135,7 +155,7 @@ const events = [
   <section class="section programs-section triad-section reveal">
     <div class="container">
       <div class="section-header text-center">
-        <span class="section-label">10YEC SOLUTION</span>
+        <span class="section-label">The10YEC SOLUTION</span>
         <h2>Triad of <span class="text-gradient-gold">3 Pillars</span></h2>
         <p>Three interconnected pathways to personal growth, community impact, and purposeful innovation</p>
       </div>
@@ -151,46 +171,51 @@ const events = [
     <div class="container">
       <div class="section-header text-center">
         <span class="section-label">OUR LOCATIONS</span>
-        <h2>10YEC Centers</h2>
+        <h2>The10YEC Centers</h2>
       </div>
 
-      <div class="centers-grid">
-        <div class="center-card">
-          <div class="center-image">
-            <div class="image-placeholder">
-              <span>🏘️</span>
-              <p>10YEC Ranch</p>
-            </div>
+      <div class="location-feature-container">
+        <div class="location-card-premium">
+          <div class="location-image-wrapper">
+            <Image src={ranchHeroImage} alt="The10YEC Branch" class="ranch-hero-img" />
+            <div class="location-overlay-label">THE HEART OF The10YEC</div>
           </div>
-          <div class="center-content">
-            <h3>Nature Retreat & Training Center</h3>
-            <p>Youth Entrepreneurship Launch</p>
-            <div class="center-location">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>7600 Cottonwood St, Frisco, TX</span>
+          
+          <div class="location-content-premium glass">
+            <div class="location-header">
+              <span class="location-badge">PREMIUM RETREAT</span>
+              <h3>The10YEC Branch</h3>
+              <p class="location-tagline">Nature Retreat & Training Center</p>
             </div>
-          </div>
-        </div>
+            
+            <div class="location-details">
+              <p class="location-description">
+                A sanctuary for growth and innovation. Our Frisco branch provides the perfect 
+                environment for youth to disconnect from distractions and reconnect with 
+                their inner focus through yoga and entrepreneurial training.
+              </p>
+              
+              <div class="location-address-box" id="addressBox">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span id="addressText">7600 Cottonwood St, Frisco, TX 75034</span>
+                <button class="copy-btn" id="copyAddress" title="Copy Address">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-        <div class="center-card">
-          <div class="center-image">
-            <div class="image-placeholder">
-              <span>🌏</span>
-              <p>India Campus</p>
-            </div>
-          </div>
-          <div class="center-content">
-            <h3>Youth Excellence Center</h3>
-            <p>Programs across India</p>
-            <div class="center-location">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-              <span>Multiple Locations in India</span>
+            <div class="location-footer">
+              <a href="https://www.google.com/maps/search/?api=1&query=7600+Cottonwood+St+Frisco+TX+75034" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-directions">
+                Get Directions
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -207,11 +232,11 @@ const events = [
         <p>Working together to empower the next generation</p>
       </div>
       <div class="partners-logo-grid">
-        <!-- Add partner logos here -->
-        <div class="partner-placeholder">Your Partner Logo</div>
-        <div class="partner-placeholder">Your Partner Logo</div>
-        <div class="partner-placeholder">Your Partner Logo</div>
-        <div class="partner-placeholder">Your Partner Logo</div>
+        {partners.map(partner => (
+          <div class="partner-item">
+            <img src={partner.logo} alt={partner.name} class="partner-logo" loading="lazy" />
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -407,20 +432,53 @@ const events = [
 
   .partners-logo-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
     flex-wrap: wrap;
-    margin-top: 3rem;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .partner-placeholder {
-    font-weight: 700;
-    color: #ccc;
-    font-size: 1.2rem;
-    border: 2px dashed #eee;
-    padding: 1rem 2rem;
+  .partner-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    background: transparent;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border-radius: 12px;
+  }
+
+  .partner-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .partner-logo {
+    max-width: 100%;
+    max-height: 100px; /* Increased size */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: none; /* Removed grayscale */
+    opacity: 1; /* Full opacity */
+    transition: transform 0.4s ease;
+  }
+
+  .partner-item:hover .partner-logo {
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .partners-logo-grid {
+      gap: 0.5rem;
+    }
+    
+    .partner-logo {
+      max-height: 70px;
+    }
   }
 
   /* Existing Styles Refinement */
@@ -429,7 +487,7 @@ const events = [
     min-height: 85vh; /* Reduced from 100vh for better fold visibility */
     display: flex;
     align-items: center;
-    padding: 10rem 0 4rem; /* Increased top padding to clear navbar */
+    padding: 8rem 0 4rem; /* Adjusted top padding */
     background: var(--gradient-hero);
     position: relative;
     overflow: hidden;
@@ -889,72 +947,186 @@ const events = [
   }
 
   /* Centers */
-  .centers-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
+  /* Centers - Refined Premium */
+  .location-feature-container {
+    max-width: 800px;
+    margin: 2rem auto 0;
+    padding: 0 1rem;
   }
 
-  .center-card {
-    background: white;
+  .location-card-premium {
+    display: flex;
     border-radius: 20px;
+    background: white;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    position: relative;
+    min-height: 300px;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
 
-  .center-card:hover {
+  .location-card-premium:hover {
     transform: translateY(-10px);
-    box-shadow: var(--shadow-xl);
   }
 
-  .center-image {
-    height: 250px;
-    background: var(--gradient-hero);
+  .location-image-wrapper {
+    flex: 0 0 42%;
+    position: relative;
+    overflow: hidden;
   }
 
-  .image-placeholder {
+  .ranch-hero-img {
+    width: 100%;
     height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s ease;
+  }
+
+  .location-card-premium:hover .ranch-hero-img {
+    transform: scale(1.05);
+  }
+
+  .location-overlay-label {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .location-content-premium {
+    flex: 1;
+    padding: 1.5rem 2.5rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 1rem;
+    background: white;
+    z-index: 1;
   }
 
-  .image-placeholder span {
-    font-size: 4rem;
+  .location-badge {
+    display: inline-block;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
   }
 
-  .image-placeholder p {
-    font-size: 1.2rem;
-    font-weight: 600;
+  .location-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
     color: var(--text-primary);
+    line-height: 1.2;
   }
 
-  .center-content {
-    padding: 2rem;
+  .location-tagline {
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-weight: 500;
   }
 
-  .center-content h3 {
-    margin-bottom: 0.5rem;
-  }
-
-  .center-content > p {
-    color: var(--blue);
+  .location-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
     margin-bottom: 1.5rem;
-  }
-
-  .center-location {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     color: var(--text-secondary);
   }
 
-  .center-location svg {
+  .location-address-box {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--warm-white);
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .location-address-box:hover {
+    border-color: var(--gold);
+    background: white;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .location-address-box svg {
     color: var(--gold);
     flex-shrink: 0;
+  }
+
+  .location-address-box span {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  .copy-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    margin-left: auto;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copy-btn:hover {
+    color: var(--blue);
+  }
+
+  .btn-directions {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-directions svg {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-directions:hover svg {
+    transform: translateX(5px);
+  }
+
+  @media (max-width: 1024px) {
+    .location-card-premium {
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    .location-image-wrapper {
+      height: 220px;
+    }
+
+    .location-content-premium {
+      padding: 1.25rem 1rem;
+    }
+    
+    .location-header h3 {
+      font-size: 1.6rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   /* CTA Section */
@@ -1085,18 +1257,65 @@ const events = [
     }
 
     .center-image {
-      height: 200px;
+      height: 180px;
     }
 
-    /* Partners Mobile */
+    /* Partners Mobile - Premium Grid */
     .partners-logo-grid {
-      gap: 2rem;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 0 1rem;
+      margin-top: 2rem;
+    }
+
+    .partner-item {
+      padding: 0.5rem;
+    }
+    
+    .partner-logo {
+      max-height: 50px;
     }
   }
 
   /* Extra small screens */
   @media (max-width: 480px) {
+    .partners-logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .location-header h3 {
+      font-size: 1.5rem;
+      white-space: nowrap;
+    }
+
+    .location-tagline {
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .location-description {
+      font-size: 0.8rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .location-address-box {
+      padding: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .location-address-box span {
+      font-size: 0.8rem;
+    }
+
+    .btn-directions {
+      width: 100%;
+      justify-content: center;
+      padding: 0.7rem 1.2rem;
+      font-size: 0.9rem;
+    }
     .container {
       padding: 0 1rem;
     }
@@ -1251,9 +1470,30 @@ const events = [
       };
       
       checkScrollable();
-      // Use ResizeObserver for more robust width checking instead of just window resize
       new ResizeObserver(checkScrollable).observe(slider);
+    }
+
+    // Copy Address Logic
+    const copyBtn = document.getElementById('copyAddress');
+    const addressText = document.getElementById('addressText')?.textContent;
+
+    if (copyBtn && addressText) {
+      copyBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        navigator.clipboard.writeText(addressText).then(() => {
+          const originalIcon = copyBtn.innerHTML;
+          copyBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>';
+          
+          setTimeout(() => {
+            copyBtn.innerHTML = originalIcon;
+          }, 2000);
+        });
+      });
     }
   });
 </script>
+
+
 

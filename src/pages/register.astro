@@ -1,23 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Event data mapped to WhatsApp links for the success state
-const programLinks = {
-  "yoga-gratitude": "https://chat.whatsapp.com/L2YEC10YEC",
-  "championship-training": "https://chat.whatsapp.com/L2YEC10YEC",
-  "national-qualifier": "https://chat.whatsapp.com/L2YEC10YEC",
-  "tech-startup": "https://chat.whatsapp.com/L2YEC10YEC"
-};
-
 const programs = [
   { id: "yoga-gratitude", name: "Weekly Gratitude Yoga Class" },
   { id: "championship-training", name: "Weekly Championship Training" },
   { id: "national-qualifier", name: "National Championship Qualifier 2026" },
   { id: "tech-startup", name: "Yoga & Tech Startup Workshop" }
 ];
+
 ---
 
-<BaseLayout title="Register - 10YEC Youth Excellence Center">
+<BaseLayout title="Register - The10YEC Youth Excellence Center">
   <section class="section register-section">
     <div class="container form-container">
       <div class="form-wrapper glassmorphism">
@@ -45,6 +38,7 @@ const programs = [
 
             <div class="form-group">
               <label for="program">Program</label>
+              <input type="hidden" id="programNameHigh" name="programName" />
               <select id="program" name="program" required>
                 <option value="" disabled selected>Select a program...</option>
                 {programs.map(p => (
@@ -77,62 +71,111 @@ const programs = [
   </section>
 </BaseLayout>
 
-<script is:inline define:vars={{ programLinks }}>
+<script>
+  import emailjs from '@emailjs/browser';
+
   document.addEventListener("DOMContentLoaded", () => {
+    // Initialize EmailJS with your Public Key
+    emailjs.init("_tJFC3cm9RgA9FhCa"); 
+
     const urlParams = new URLSearchParams(window.location.search);
     const eventId = urlParams.get('eventId');
     
-    const programSelect = document.getElementById('program');
+    const programSelect = document.getElementById('program') as HTMLSelectElement;
     if (eventId && programSelect.querySelector(`option[value="${eventId}"]`)) {
       programSelect.value = eventId;
     }
 
-    const form = document.getElementById('registrationForm');
+    const form = document.getElementById('registrationForm') as HTMLFormElement;
     const formView = document.getElementById('form-view');
     const successView = document.getElementById('success-view');
-    const whatsappBtn = document.getElementById('whatsappBtn');
+    const whatsappBtn = document.getElementById('whatsappBtn') as HTMLAnchorElement;
     const resetBtn = document.getElementById('resetBtn');
+    const programNameInput = document.getElementById('programNameHigh') as HTMLInputElement;
+
+    // WhatsApp links map
+    const programLinks: Record<string, string> = {
+      "yoga-gratitude": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t",
+      "championship-training": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t",
+      "national-qualifier": "https://chat.whatsapp.com/Ka65Ts07rgSBmRQ5K65MXw?mode=gi_t",
+      "tech-startup": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t"
+    };
 
     if (form) {
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Get selected program
         const selectedProgram = programSelect.value;
-        const link = programLinks[selectedProgram] || "https://chat.whatsapp.com/L2YEC10YEC";
+        const programLabel = programSelect.options[programSelect.selectedIndex].text;
+        const link = programLinks[selectedProgram] || "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t";
         
-        // Update whatsapp link
+        // Final update before success view
         if (whatsappBtn) {
           whatsappBtn.href = link;
+          console.log("Submit: WhatsApp link set to:", link);
         }
         
-        // Transition out form and in success state
-        const btn = form.querySelector('.btn-submit');
-        if (btn) {
-          const originalText = btn.textContent;
-          btn.textContent = "Processing...";
-          btn.style.opacity = "0.8";
-          btn.disabled = true;
+        // Set the full program name in the hidden input for EmailJS
+        if (programNameInput) {
+          programNameInput.value = programLabel;
+        }
+        
+        const btn = form.querySelector('.btn-submit') as HTMLButtonElement;
+        const originalText = btn.textContent;
+        btn.textContent = "Processing...";
+        btn.style.opacity = "0.8";
+        btn.disabled = true;
 
-          setTimeout(() => {
-            formView.classList.add('hidden');
-            successView.classList.remove('hidden');
-            successView.classList.add('fade-in');
+        try {
+          const result = await emailjs.sendForm(
+            'service_dddfnvz', 
+            'template_83k9qdi', 
+            form
+          );
+
+          if (result.status === 200) {
+            // Success! The link is already set above.
             
-            btn.textContent = originalText;
-            btn.style.opacity = "1";
-            btn.disabled = false;
+            formView?.classList.add('hidden');
+            successView?.classList.remove('hidden');
+            successView?.classList.add('fade-in');
             form.reset();
-          }, 800);
+          } else {
+            alert("Error submitting form. Please try again.");
+          }
+        } catch (err) {
+          console.error('EmailJS Error:', err);
+          alert("Error sending email. Please check your EmailJS configuration.");
+        } finally {
+          btn.textContent = originalText;
+          btn.style.opacity = "1";
+          btn.disabled = false;
         }
       });
     }
 
+    // Update WhatsApp link immediately when program is selected
+    if (programSelect) {
+      programSelect.addEventListener('change', () => {
+        const selectedProgram = programSelect.value;
+        const link = programLinks[selectedProgram] || "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t";
+        if (whatsappBtn) {
+          whatsappBtn.href = link;
+          console.log("Change: WhatsApp link set to:", link);
+        }
+      });
+      // Set initial link based on default/URL selection
+      const initialProgram = programSelect.value;
+      if (initialProgram && whatsappBtn) {
+        whatsappBtn.href = programLinks[initialProgram] || "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t";
+      }
+    }
+
     if (resetBtn) {
       resetBtn.addEventListener('click', () => {
-        successView.classList.add('hidden');
-        formView.classList.remove('hidden');
-        formView.classList.add('fade-in');
+        successView?.classList.add('hidden');
+        formView?.classList.remove('hidden');
+        formView?.classList.add('fade-in');
       });
     }
   });
@@ -314,3 +357,4 @@ const programs = [
     }
   }
 </style>
+
