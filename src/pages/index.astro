@@ -6,8 +6,12 @@ import yogaClassImage from '../assets/images/yoga-foundation-class.jpg';
 import trainingImage from '../assets/images/yoga-championship-training.jpg';
 import championImage from '../assets/images/banner.png';
 import ranchHeroImage from '../assets/images/ranch-hero.png';
+import naveenImage from '../assets/images/entrepreneur-naveen.jpeg';
+import sidharthImage from '../assets/images/entrepreneur-sidharth.jpeg';
+import adamImage from '../assets/images/entrepreneur-adam.jpeg';
+import aiCyberLabImage from '../assets/images/ai-cyber-lab.png';
 
-const events = [
+const activePrograms = [
   {
     id: "yoga-gratitude",
     title: "Weekly Gratitude Yoga Class",
@@ -50,6 +54,42 @@ const events = [
     image: yogaClassImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
+    objectPosition: "center center"
+  }
+];
+
+const upcomingPrograms = [
+  {
+    id: "naveen-entrepreneurship",
+    title: "Youth Entrepreneurship: TED Series: Sight vs Vision",
+    date: "COMING UP",
+    time: "11:00 AM (CENTRAL)",
+    location: "Online / ZOOM",
+    image: naveenImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
+    bgColor: "#fff9c4",
+    objectPosition: "center center"
+  },
+  {
+    id: "sidharth-entrepreneurship",
+    title: "Youth Entrepreneurship Camp feat. Sidharth Srinivasan",
+    date: "COMING UP",
+    time: "11:00 AM (CENTRAL)",
+    location: "Online / ZOOM",
+    image: sidharthImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
+    bgColor: "#e8f5e9",
+    objectPosition: "center top"
+  },
+  {
+    id: "adam-entrepreneurship",
+    title: "Youth Entrepreneurship Launch feat. Adam Lansing",
+    date: "COMING UP",
+    time: "11:00 AM (CENTRAL)",
+    location: "7600 Cottonwood St, Frisco, TX",
+    image: adamImage,
+    whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
+    bgColor: "#ffe0b2",
     objectPosition: "center center"
   }
 ];
@@ -108,12 +148,12 @@ const partners = [
   <section id="events" class="section events-section reveal">
     <div class="container">
       <div class="section-header text-center">
-        <h2 class="events-title">Upcoming <span class="text-blue">Events</span></h2>
+        <h2 class="events-title">Active <span class="text-blue">Programs</span></h2>
       </div>
 
-      <div class="events-scroll-wrapper">
-        <div class="events-slider" id="eventsSlider">
-          {events.map(event => (
+      <div class="events-scroll-wrapper" style="margin-bottom: 4rem;">
+        <div class="events-slider" id="activeSlider">
+          {activePrograms.map(event => (
             <div class="event-card" style={`background-color: ${event.bgColor};`}>
               <div class="event-info">
                 <h3>{event.title}</h3>
@@ -136,12 +176,54 @@ const partners = [
         </div>
         
         <div class="slider-nav">
-          <button class="slider-btn prev-btn" id="scrollLeft" aria-label="Previous events">
+          <button class="slider-btn prev-btn" id="scrollLeftActive" aria-label="Previous active programs">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M15 18l-6-6 6-6"/>
             </svg>
           </button>
-          <button class="slider-btn next-btn" id="scrollRight" aria-label="Next events">
+          <button class="slider-btn next-btn" id="scrollRightActive" aria-label="Next active programs">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="section-header text-center" style="margin-top: 6rem;">
+        <h2 class="events-title">Upcoming <span class="text-gold">Programs</span></h2>
+      </div>
+
+      <div class="events-scroll-wrapper">
+        <div class="events-slider" id="upcomingSlider">
+          {upcomingPrograms.map(event => (
+            <div class="event-card" style={`background-color: ${event.bgColor};`}>
+              <div class="event-info">
+                <h3>{event.title}</h3>
+                <p class="event-time">{event.date} · {event.time}</p>
+                <div class="event-location-pin">
+                  <span class="pin-icon">📍</span>
+                  <span>{event.location}</span>
+                </div>
+              </div>
+              
+              <div class="event-image-container">
+                <Image src={event.image} alt={event.title} class="event-img" style={`object-position: ${event.objectPosition || 'center'};`} />
+              </div>
+
+              <div class="event-actions">
+                <a href={`/register?eventId=${event.id}`} class="btn btn-event-form">Register Now</a>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div class="slider-nav">
+          <button class="slider-btn prev-btn" id="scrollLeftUpcoming" aria-label="Previous upcoming programs">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="slider-btn next-btn" id="scrollRightUpcoming" aria-label="Next upcoming programs">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M9 18l6-6-6-6"/>
             </svg>
@@ -162,6 +244,37 @@ const partners = [
 
       <div class="triad-visual" style="margin-bottom: 4rem;">
          <Image src={triadImage} alt="Triad of 3 Pillars: Yoga, Technology, Sharing" class="triad-img hover-scale" />
+      </div>
+    </div>
+  </section>
+
+  <!-- AI & Cyber Incubation Lab Launch -->
+  <section class="section dark-section reveal">
+    <div class="containerWide">
+      <div class="cyber-lab-card">
+        <div class="card-header">
+          <span class="section-label text-gold">SPECIAL LAUNCH</span>
+          <h2 class="text-white">AI & Cyber Incubation Labs</h2>
+        </div>
+        <div class="card-image">
+          <Image src={aiCyberLabImage} alt="The10YEC AI & Cyber Incubation Labs Infographic" class="lab-img" />
+        </div>
+        <div class="card-body">
+          <span class="launch-date">Coming May 21, 2026</span>
+          <p class="text-silver">
+            Join the elite circle of youth innovators building the future of intelligence and security. 
+            Master the latest AI tools like <strong>Claude, OpenAI, and Cursor</strong> while developing 
+            real-world <strong>RED vs BLUE team</strong> cybersecurity solutions.
+          </p>
+          <div class="feature-tags-inline">
+            <span>#AI_Agents</span>
+            <span>#CyberSecurity</span>
+            <span>#Incubation</span>
+          </div>
+          <div class="card-actions">
+            <a href="/register?eventId=ai-cyber-lab" class="btn btn-primary">Register for Incubation Lab</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -487,7 +600,7 @@ const partners = [
     min-height: 85vh; /* Reduced from 100vh for better fold visibility */
     display: flex;
     align-items: center;
-    padding: 8rem 0 4rem; /* Adjusted top padding */
+    padding: 5rem 0 4rem; /* Reduced top padding */
     background: var(--gradient-hero);
     position: relative;
     overflow: hidden;
@@ -1278,6 +1391,157 @@ const partners = [
     }
   }
 
+  /* AI & Cyber Horizontal Card */
+  .dark-section {
+    background: #000;
+    padding: 1rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .containerWide {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .cyber-lab-card {
+    display: grid;
+    grid-template-columns: 500px 1fr;
+    grid-template-areas: 
+      "image header"
+      "image body";
+    background: rgba(15, 15, 18, 0.95);
+    backdrop-filter: blur(20px);
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    max-width: 1250px;
+    margin: 1rem auto;
+    align-items: center; /* Center to prevent image stretching */
+  }
+
+  .card-header {
+    grid-area: header;
+    padding: 1.5rem 2rem 0.25rem;
+    text-align: left;
+  }
+
+  .card-header h2 {
+    font-size: 2.8rem; /* Balanced size */
+    line-height: 1.1;
+    margin-top: 0.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .card-image {
+    grid-area: image;
+    width: 500px; /* Force fixed width for strict square */
+    aspect-ratio: 1 / 1;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .lab-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+
+  .cyber-lab-card:hover .lab-img {
+    transform: scale(1.08);
+  }
+
+  .card-body {
+    grid-area: body;
+    padding: 0.25rem 2rem 1.5rem;
+    text-align: left;
+  }
+
+  /* Body H2 removed since it moved to header */
+
+  .launch-date {
+    font-size: 1.1rem; /* Reduced font size */
+    background: linear-gradient(90deg, #00d2ff 0%, #3a7bd5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    display: block;
+    letter-spacing: 0.5px;
+  }
+
+  .text-silver {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem; /* Slightly larger for the wider column */
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-tags-inline {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .feature-tags-inline span {
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 1024px) {
+    .cyber-lab-card {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "header"
+        "image"
+        "body";
+      max-width: 100%;
+      margin: 1rem auto;
+    }
+    .card-header {
+      padding: 2.5rem 1.5rem 1rem;
+      text-align: center;
+    }
+    .card-header h2 { 
+      font-size: 2.2rem;
+      word-wrap: break-word;
+    }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+    .lab-img {
+      object-fit: contain;
+      padding: 0.5rem;
+    }
+    .card-body {
+      padding: 2rem 2rem 3rem;
+      text-align: center;
+    }
+    .text-silver { font-size: 0.95rem; }
+    .feature-tags-inline { justify-content: center; }
+  }
+
+  @media (max-width: 768px) {
+    .card-header h2 { font-size: 2.2rem; }
+    .card-header { padding: 2rem 1.5rem 1rem; }
+    .card-body { padding: 1.5rem 1.5rem 2.5rem; }
+    .text-silver { font-size: 1rem; }
+    .lab-img { max-height: 400px; }
+  }
+
   /* Extra small screens */
   @media (max-width: 480px) {
     .partners-logo-grid {
@@ -1367,118 +1631,96 @@ const partners = [
 <script>
   // Events Slider Navigation (Infinite Scroll)
   document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('eventsSlider');
-    const scrollLeftBtn = document.getElementById('scrollLeft');
-    const scrollRightBtn = document.getElementById('scrollRight');
+    const initSlider = (sliderId: string, prevBtnId: string, nextBtnId: string) => {
+      const slider = document.getElementById(sliderId);
+      const scrollLeftBtn = document.getElementById(prevBtnId);
+      const scrollRightBtn = document.getElementById(nextBtnId);
 
-    if (slider && scrollLeftBtn && scrollRightBtn) {
-      let isTransitioning = false;
-      
-      // Calculate scroll amount based on card width + gap
-      // The CSS defines flex basis and minimum width, we'll measure actual card width
-      const getScrollAmount = () => {
-        const firstCard = slider.querySelector('.event-card');
-        if (!firstCard) return 380;
+      if (slider && scrollLeftBtn && scrollRightBtn) {
+        let isTransitioning = false;
         
-        // Include gap in calculation (gap is 2rem = ~32px)
-        const style = window.getComputedStyle(slider);
-        const gap = parseInt(style.gap) || 32;
-        return firstCard.clientWidth + gap;
-      };
+        const getScrollAmount = () => {
+          const firstCard = slider.querySelector('.event-card');
+          if (!firstCard) return 380;
+          const style = window.getComputedStyle(slider);
+          const gap = parseInt(style.gap) || 32;
+          return firstCard.clientWidth + gap;
+        };
 
-      scrollLeftBtn.addEventListener('click', () => {
-        if (isTransitioning) return;
-        
-        const scrollAmount = getScrollAmount();
-        
-        // If at the very beginning, smoothly scroll to end then snap
-        if (slider.scrollLeft <= 10) {
-          isTransitioning = true;
-          // Move the last element to the beginning
-          const lastChild = slider.lastElementChild;
-          if (lastChild) {
-            // Momentarily disable scroll snap and smooth behavior
-            slider.style.scrollBehavior = 'auto';
-            slider.style.scrollSnapType = 'none';
-            
-            // Move item
-            slider.prepend(lastChild);
-            
-            // Adjust scroll position so it feels like we haven't moved
-            slider.scrollLeft += scrollAmount;
-            
-            // Re-enable smooth scroll and actually animate
-            requestAnimationFrame(() => {
-              slider.style.scrollBehavior = 'smooth';
-              slider.style.scrollSnapType = 'x mandatory';
-              slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-              
-              setTimeout(() => { isTransitioning = false; }, 400);
-            });
+        scrollLeftBtn.addEventListener('click', () => {
+          if (isTransitioning) return;
+          const scrollAmount = getScrollAmount();
+          if (slider.scrollLeft <= 10) {
+            isTransitioning = true;
+            const lastChild = slider.lastElementChild;
+            if (lastChild) {
+              slider.style.scrollBehavior = 'auto';
+              slider.style.scrollSnapType = 'none';
+              slider.prepend(lastChild);
+              slider.scrollLeft += scrollAmount;
+              requestAnimationFrame(() => {
+                slider.style.scrollBehavior = 'smooth';
+                slider.style.scrollSnapType = 'x mandatory';
+                slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                setTimeout(() => { isTransitioning = false; }, 400);
+              });
+            } else {
+               isTransitioning = false;
+            }
           } else {
-             isTransitioning = false;
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
           }
-        } else {
-          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
-      });
+        });
 
-      scrollRightBtn.addEventListener('click', () => {
-        if (isTransitioning) return;
-
-        const scrollAmount = getScrollAmount();
+        scrollRightBtn.addEventListener('click', () => {
+          if (isTransitioning) return;
+          const scrollAmount = getScrollAmount();
+          if (Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth - 10) {
+            isTransitioning = true;
+            const firstChild = slider.firstElementChild;
+            if (firstChild) {
+              slider.style.scrollBehavior = 'auto';
+              slider.style.scrollSnapType = 'none';
+              slider.append(firstChild);
+              slider.scrollLeft -= scrollAmount;
+              requestAnimationFrame(() => {
+                slider.style.scrollBehavior = 'smooth';
+                slider.style.scrollSnapType = 'x mandatory';
+                slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                setTimeout(() => { isTransitioning = false; }, 400);
+              });
+            } else {
+              isTransitioning = false;
+            }
+          } else {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        });
         
-        // If at the very end
-        if (Math.ceil(slider.scrollLeft + slider.clientWidth) >= slider.scrollWidth - 10) {
-          isTransitioning = true;
-          
-          // Move the first element to the end
-          const firstChild = slider.firstElementChild;
-          if (firstChild) {
-            slider.style.scrollBehavior = 'auto';
-            slider.style.scrollSnapType = 'none';
-            
-            slider.append(firstChild);
-            
-            slider.scrollLeft -= scrollAmount;
-            
-            requestAnimationFrame(() => {
-              slider.style.scrollBehavior = 'smooth';
-              slider.style.scrollSnapType = 'x mandatory';
-              slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-              
-              setTimeout(() => { isTransitioning = false; }, 400);
-            });
-          } else {
-            isTransitioning = false;
-          }
-        } else {
-          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        }
-      });
-      
-      // Optional: Hide buttons if not enough content to scroll initially
-      // But since we are infinite, we generally want to keep them if there are > 1 cards
-      const checkScrollable = () => {
-          if (slider.children.length <= 1) {
-              scrollLeftBtn.style.display = 'none';
-              scrollRightBtn.style.display = 'none';
-          } else {
-              scrollLeftBtn.style.display = 'flex';
-              scrollRightBtn.style.display = 'flex';
-          }
-      };
-      
-      checkScrollable();
-      new ResizeObserver(checkScrollable).observe(slider);
-    }
+        const checkScrollable = () => {
+            if (slider.children.length <= 1) {
+                scrollLeftBtn.style.display = 'none';
+                scrollRightBtn.style.display = 'none';
+            } else {
+                scrollLeftBtn.style.display = 'flex';
+                scrollRightBtn.style.display = 'flex';
+            }
+        };
+        
+        checkScrollable();
+        new ResizeObserver(checkScrollable).observe(slider);
+      }
+    };
+
+    initSlider('activeSlider', 'scrollLeftActive', 'scrollRightActive');
+    initSlider('upcomingSlider', 'scrollLeftUpcoming', 'scrollRightUpcoming');
 
     // Copy Address Logic
     const copyBtn = document.getElementById('copyAddress');
     const addressText = document.getElementById('addressText')?.textContent;
 
     if (copyBtn && addressText) {
-      copyBtn.addEventListener('click', (e) => {
+      copyBtn.addEventListener('click', (e: MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
         

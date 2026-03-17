@@ -1,6 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ProgramHero from '../../components/ProgramHero.astro';
+import { Image } from 'astro:assets';
+import naveenImage from '../../assets/images/entrepreneur-naveen.jpeg';
+import sidharthImage from '../../assets/images/entrepreneur-sidharth.jpeg';
+import adamImage from '../../assets/images/entrepreneur-adam.jpeg';
 ---
 
 <BaseLayout title="Entrepreneurship & Leadership - The10YEC Youth Excellence Center">
@@ -66,6 +70,52 @@ import ProgramHero from '../../components/ProgramHero.astro';
           <div class="methodology-icon">📈</div>
           <h3>Kaizen</h3>
           <p>The philosophy of continuous incremental improvement to achieve long-term excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Highlights Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-label">HIGHLIGHTS</span>
+        <h2>Program Highlights</h2>
+        <p>Past sessions and upcoming opportunities for growth and innovation</p>
+      </div>
+
+      <div class="program-highlights-grid">
+        <div class="highlight-card">
+          <div class="highlight-image">
+            <Image src={naveenImage} alt="Naveen Lakkur - Youth Entrepreneurship" />
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-date">COMING UP</span>
+            <h3>TED Series: Sight vs Vision</h3>
+            <p>Develop "vision vs sight" to identify status quo and opportunities with Naveen Lakkur.</p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-image">
+            <Image src={sidharthImage} alt="Sidharth Srinivasan - Trashbots" />
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-date">COMING UP</span>
+            <h3>Youth Entrepreneurship Camp</h3>
+            <p>Featuring Sidharth Srinivasan, founder of Trashbots, for a journey into coding and robotics.</p>
+          </div>
+        </div>
+
+        <div class="highlight-card">
+          <div class="highlight-image">
+            <Image src={adamImage} alt="Adam Lansing - Hawkeye Innovations" />
+          </div>
+          <div class="highlight-content">
+            <span class="highlight-date">COMING UP</span>
+            <h3>Youth Entrepreneurship Launch</h3>
+            <p>Join Adam Lansing, CEO of Hawkeye Innovations, to learn about his electric car journey.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -211,6 +261,85 @@ import ProgramHero from '../../components/ProgramHero.astro';
     }
     .content-col h2, .section-header h2 {
       font-size: 2.2rem;
+    }
+  }
+
+  /* Program Highlights Grid */
+  .program-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .highlight-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .highlight-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  }
+
+  .highlight-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    background: #f8f9fa;
+  }
+
+  .highlight-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .highlight-content {
+    padding: 1.5rem;
+  }
+
+  .highlight-date {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .highlight-content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+  }
+
+  .highlight-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) {
+    .program-highlights-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .program-highlights-grid {
+      grid-template-columns: 1fr;
+    }
+    .highlight-image {
+      height: 200px;
     }
   }
 </style>

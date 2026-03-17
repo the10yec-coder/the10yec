@@ -5,7 +5,11 @@ const programs = [
   { id: "yoga-gratitude", name: "Weekly Gratitude Yoga Class" },
   { id: "championship-training", name: "Weekly Championship Training" },
   { id: "national-qualifier", name: "National Championship Qualifier 2026" },
-  { id: "tech-startup", name: "Yoga & Tech Startup Workshop" }
+  { id: "tech-startup", name: "Yoga & Tech Startup Workshop" },
+  { id: "ai-cyber-lab", name: "AI & Cyber Incubation Lab (Upcoming)" },
+  { id: "naveen-entrepreneurship", name: "Youth Entrepreneurship: TED Series (Upcoming)" },
+  { id: "sidharth-entrepreneurship", name: "Youth Entrepreneurship Camp (Upcoming)" },
+  { id: "adam-entrepreneurship", name: "Youth Entrepreneurship Launch (Upcoming)" }
 ];
 
 ---
@@ -98,7 +102,11 @@ const programs = [
       "yoga-gratitude": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t",
       "championship-training": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t",
       "national-qualifier": "https://chat.whatsapp.com/Ka65Ts07rgSBmRQ5K65MXw?mode=gi_t",
-      "tech-startup": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t"
+      "tech-startup": "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t",
+      "ai-cyber-lab": "https://chat.whatsapp.com/L2YECThe10YEC",
+      "naveen-entrepreneurship": "https://chat.whatsapp.com/L2YECThe10YEC",
+      "sidharth-entrepreneurship": "https://chat.whatsapp.com/L2YECThe10YEC",
+      "adam-entrepreneurship": "https://chat.whatsapp.com/L2YECThe10YEC"
     };
 
     if (form) {
@@ -112,7 +120,6 @@ const programs = [
         // Final update before success view
         if (whatsappBtn) {
           whatsappBtn.href = link;
-          console.log("Submit: WhatsApp link set to:", link);
         }
         
         // Set the full program name in the hidden input for EmailJS
@@ -161,7 +168,6 @@ const programs = [
         const link = programLinks[selectedProgram] || "https://chat.whatsapp.com/G57mN8xuu4vBbRT3V7qKIH?mode=gi_t";
         if (whatsappBtn) {
           whatsappBtn.href = link;
-          console.log("Change: WhatsApp link set to:", link);
         }
       });
       // Set initial link based on default/URL selection
@@ -206,13 +212,15 @@ const programs = [
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   }
 
-  .form-header {
-    margin-bottom: 2.5rem;
+  .form-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
   }
 
   .form-header p {
     color: var(--text-secondary, #555);
     margin-top: 0.5rem;
+    font-size: 0.95rem;
   }
 
   .registration-form {
@@ -231,17 +239,17 @@ const programs = [
   .form-group label {
     font-weight: 600;
     color: var(--text-primary, #333);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .form-group input,
   .form-group select {
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 0.9rem;
     border: 1.5px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.8);
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #333;
     transition: all 0.3s ease;
   }
@@ -256,9 +264,9 @@ const programs = [
 
   .btn-submit {
     margin-top: 1rem;
-    padding: 1rem;
+    padding: 0.9rem;
     border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
     width: 100%;
     cursor: pointer;
@@ -321,14 +329,14 @@ const programs = [
     gap: 0.8rem;
     background: #25D366;
     color: white;
-    padding: 1rem 1.5rem;
+    padding: 0.9rem 1.5rem;
     border-radius: 12px;
     font-weight: 700;
     text-decoration: none;
     margin-top: 1.5rem;
     transition: all 0.3s ease;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .btn-whatsapp:hover {
