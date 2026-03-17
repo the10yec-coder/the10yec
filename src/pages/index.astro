@@ -10,6 +10,7 @@ import naveenImage from '../assets/images/entrepreneur-naveen.jpeg';
 import sidharthImage from '../assets/images/entrepreneur-sidharth.jpeg';
 import adamImage from '../assets/images/entrepreneur-adam.jpeg';
 import aiCyberLabImage from '../assets/images/ai-cyber-lab.png';
+import qualifierImage from '../assets/images/usa-yoga-qualifier-user.jpg';
 
 const activePrograms = [
   {
@@ -17,7 +18,7 @@ const activePrograms = [
     title: "Weekly Gratitude Yoga Class",
     date: "SATURDAYS",
     time: "9:30 AM (CENTRAL)",
-    location: "The10YEC BRANCH, FRISCO, TX",
+    location: "The10YEC RANCH, FRISCO, TX",
     image: yogaClassImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#fdf5e6",
@@ -28,7 +29,7 @@ const activePrograms = [
     title: "Weekly Championship Training",
     date: "SUNDAYS",
     time: "11:00 AM (CENTRAL)",
-    location: "The10YEC BRANCH, FRISCO, TX",
+    location: "The10YEC RANCH, FRISCO, TX",
     image: trainingImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
@@ -37,20 +38,20 @@ const activePrograms = [
   {
     id: "national-qualifier",
     title: "National Championship Qualifier 2026",
-    date: "APRIL 4, 2026",
+    date: "MAY 2nd, 2026",
     time: "9:00 AM",
-    location: "The10YEC BRANCH, FRISCO, TX",
-    image: championImage,
+    location: "The10YEC RANCH, FRISCO, TX",
+    image: qualifierImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#fdf5e6",
-    objectPosition: "center 30%"
+    objectPosition: "center center"
   },
   {
     id: "tech-startup",
     title: "Yoga & Tech Startup Workshop",
     date: "MAY 15, 2026",
     time: "10:00 AM",
-    location: "The10YEC BRANCH, FRISCO, TX",
+    location: "The10YEC RANCH, FRISCO, TX",
     image: yogaClassImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
@@ -60,14 +61,14 @@ const activePrograms = [
 
 const upcomingPrograms = [
   {
-    id: "naveen-entrepreneurship",
-    title: "Youth Entrepreneurship: TED Series: Sight vs Vision",
+    id: "adam-entrepreneurship",
+    title: "Youth Entrepreneurship Launch feat. Adam Lamsing",
     date: "COMING UP",
     time: "11:00 AM (CENTRAL)",
-    location: "Online / ZOOM",
-    image: naveenImage,
+    location: "7600 Cottonwood St, Frisco, TX",
+    image: adamImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
-    bgColor: "#fff9c4",
+    bgColor: "#ffe0b2",
     objectPosition: "center center"
   },
   {
@@ -82,14 +83,14 @@ const upcomingPrograms = [
     objectPosition: "center top"
   },
   {
-    id: "adam-entrepreneurship",
-    title: "Youth Entrepreneurship Launch feat. Adam Lansing",
+    id: "naveen-entrepreneurship",
+    title: "Youth Entrepreneurship: TED Series: Sight vs Vision",
     date: "COMING UP",
     time: "11:00 AM (CENTRAL)",
-    location: "7600 Cottonwood St, Frisco, TX",
-    image: adamImage,
+    location: "Online / ZOOM",
+    image: naveenImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
-    bgColor: "#ffe0b2",
+    bgColor: "#fff9c4",
     objectPosition: "center center"
   }
 ];
@@ -124,7 +125,7 @@ const partners = [
           <span class="title-segment">Where</span> 
           <span class="title-segment text-blue">Modern Innovation</span>
           <span class="title-segment">Is Powered By</span> 
-          <span class="title-segment text-gold">Ancient Wisdom</span>
+          <span class="title-segment text-gold">Eternal Wisdom</span>
         </h1>
         <p class="hero-subtitle">
           <strong>Cultivating next generation youth entrepreneurs for the AI era using Yogic Powers</strong>
@@ -134,6 +135,12 @@ const partners = [
           entrepreneurship, and community service. Build clarity, confidence, resilience, 
           and purpose while creating positive impact in society.
         </p>
+        <div class="mission-link-container">
+          <a href="https://open.spotify.com/episode/0wyfPnu95QJL2EU2Uu5JSd?si=oGnCvg_GSZOqxvA9XtOSjQ" target="_blank" rel="noopener noreferrer" class="mission-spotify-link">
+            <span class="spotify-icon">🎙️</span>
+            <span class="link-text">Listen to our Vision: The Essence of The10YEC</span>
+          </a>
+        </div>
         <div class="hero-buttons">
           <a href="/#programs" class="btn btn-primary">Explore Programs</a>
           <a href="/about/philosophy" class="btn btn-outline">Our Philosophy</a>
@@ -269,14 +276,14 @@ const partners = [
               <span class="tech-icon">🤖</span>
               <div>
                 <strong>AI Agent Mastery</strong>
-                <p>Build and deploy agents using Claude, OpenAI, and Cursor.</p>
+                <p>Build and deploy agents using OpenClaw, Claude, OpenAI, Gemini Studio, Cursor and others.</p>
               </div>
             </div>
             <div class="tech-item">
               <span class="tech-icon">🛡️</span>
               <div>
                 <strong>Cybersecurity Lab</strong>
-                <p>Practical RED vs BLUE team simulations.</p>
+                <p>Practical RED vs BLUE team simulations with NHI (non-human identities), data security, regulation & compliance - and sovereign secure AI for autonomous systems.</p>
               </div>
             </div>
           </div>
@@ -299,20 +306,20 @@ const partners = [
       <div class="location-feature-container">
         <div class="location-card-premium">
           <div class="location-image-wrapper">
-            <Image src={ranchHeroImage} alt="The10YEC Branch" class="ranch-hero-img" />
+            <Image src={ranchHeroImage} alt="The10YEC Ranch" class="ranch-hero-img" />
             <div class="location-overlay-label">THE HEART OF The10YEC</div>
           </div>
           
           <div class="location-content-premium glass">
             <div class="location-header">
               <span class="location-badge">PREMIUM RETREAT</span>
-              <h3>The10YEC Branch</h3>
+              <h3>The10YEC Ranch</h3>
               <p class="location-tagline">Nature Retreat & Training Center</p>
             </div>
             
             <div class="location-details">
               <p class="location-description">
-                A sanctuary for growth and innovation. Our Frisco branch provides the perfect 
+                A sanctuary for growth and innovation. Our Frisco ranch provides the perfect 
                 environment for youth to disconnect from distractions and reconnect with 
                 their inner focus through yoga and entrepreneurial training.
               </p>
@@ -338,8 +345,6 @@ const partners = [
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
               </a>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -470,8 +475,7 @@ const partners = [
     line-height: 1.2;
     margin-bottom: 0.75rem;
     text-align: center;
-    color: #000;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
   }
 
   .event-time {
@@ -601,6 +605,37 @@ const partners = [
     .partner-logo {
       max-height: 70px;
     }
+  }
+
+  /* Existing Styles Refinement */
+  .mission-link-container {
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease-out 0.7s backwards;
+  }
+
+  .mission-spotify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(30, 215, 96, 0.08);
+    border: 1px solid rgba(30, 215, 96, 0.3);
+    border-radius: 50px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .mission-spotify-link:hover {
+    background: rgba(30, 215, 96, 0.15);
+    border-color: rgba(30, 215, 96, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 215, 96, 0.1);
+  }
+
+  .spotify-icon {
+    font-size: 1.2rem;
   }
 
   /* Existing Styles Refinement */
@@ -737,7 +772,7 @@ const partners = [
   /* Challenges Grid */
   .challenges-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
     max-width: 1200px;
@@ -906,7 +941,7 @@ const partners = [
   }
 
   .philosophy-quote p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 2rem;
     font-style: italic;
     color: var(--text-primary);
@@ -1069,7 +1104,7 @@ const partners = [
   }
 
   .location-header h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.25rem;

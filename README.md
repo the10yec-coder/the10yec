@@ -1,13 +1,13 @@
 # The10YEC Youth Excellence Center Website
 
-A modern, high-end website for **The10YEC Youth Excellence Center** built with Astro. Features a beautiful blend of ancient yogic wisdom and modern innovation design.
+A modern, high-end website for **The10YEC Youth Excellence Center** built with Astro. Features a beautiful blend of eternal yogic wisdom and modern innovation design.
 
 ## 🎨 Design Features
 
 - **Premium Aesthetic**: Clean, elegant design using **Playfair Display** and **Cormorant Garamond** typography.
 - **Brand Colors**: Gold (#F4B41A) and Blue (#1E88E5) from The10YEC logo.
 - **Interactive Experience**: Smooth scroll-reveal animations, interactive maps, and dynamic event registration.
-- **Horizontal Location Showcase**: A sleek, compact horizontal layout for centers (e.g., The10YEC Branch).
+- **Horizontal Location Showcase**: A sleek, compact horizontal layout for centers (e.g., The10YEC Ranch).
 - **Fully Responsive**: Optimized for high-density mobile views with ultra-compact layouts.
 - **Performance**: High-speed static page delivery powered by Astro.
 - **SEO Ready**: Comprehensive semantic HTML and optimized meta tags.
@@ -38,8 +38,8 @@ The10YEC/
 
 ✅ **Core Brand Pages** - Vision, Philosophy, and Team segments.
 ✅ **Program Suite** - Fully standardized layouts for Yoga, Technology, Entrepreneurship, and Sharing.
-✅ **Interactive Centers** - The10YEC Branch Frisco features interactive "Get Directions" and "Copy Address" utilities.
-✅ **Global Rebranding** - Consistent usage of "The10YEC" and "Branch" terminology.
+✅ **Interactive Centers** - The10YEC Ranch Frisco features interactive "Get Directions" and "Copy Address" utilities.
+✅ **Global Rebranding** - Consistent usage of "The10YEC" and "Ranch" terminology.
 ✅ **UTF-8 Stability** - Verified encoding for all icons and mathematical symbols.
 
 ## 📧 Contact

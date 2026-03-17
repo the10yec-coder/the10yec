@@ -52,7 +52,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <div class="pillar">
             <h3>Master Their Minds</h3>
             <p>
-              Through the ancient practice of Samyama, youth learn to harness the full power of their 
+              Through the eternal practice of Samyama, youth learn to harness the full power of their 
               minds, achieving clarity, focus, and mental excellence in all endeavors.
             </p>
           </div>
@@ -156,7 +156,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <svg viewBox="0 0 300 300" width="240" height="240">
             <circle cx="150" cy="150" r="140" fill="none" stroke="url(#philosophyGrad)" stroke-width="2" opacity="0.3"/>
             <circle cx="150" cy="150" r="100" fill="none" stroke="url(#philosophyGrad)" stroke-width="2" opacity="0.5"/>
-            <text x="150" y="165" text-anchor="middle" font-size="60" fill="url(#philosophyGrad)" font-family="Playfair Display" font-weight="700">0 → 1</text>
+            <text x="150" y="165" text-anchor="middle" font-size="60" fill="url(#philosophyGrad)" font-family="Cormorant Garamond" font-weight="700">0 → 1</text>
             <defs>
               <linearGradient id="philosophyGrad">
                 <stop offset="0%" stop-color="#F4B41A"/>
@@ -195,7 +195,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="container">
       <div class="section-header text-center">
         <span class="section-label">OUR VALUES</span>
-        <h2>What Guides Us</h2>
+        <h2 class="premium-heading">What Guides Us</h2>
       </div>
 
       <div class="values-grid">
@@ -277,6 +277,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--text-secondary);
   }
 
+  .spotify-icon {
+    font-size: 1.2rem;
+  }
+
   .vision-content {
     text-align: center;
   }
@@ -285,7 +289,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     margin: 0 auto 2rem;
   }
 
-  .vision-content h2 {
+  .vision-content h2, .premium-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 600;
     margin-bottom: 1.5rem;
     color: var(--blue);
   }
@@ -384,7 +391,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .philosophy-quote p {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 2.5rem;
     font-style: italic;
     color: var(--text-primary);
@@ -410,7 +417,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Changed to auto-fit */
+    grid-template-columns: repeat(3, 1fr) !important; /* Strictly force 3 columns on desktop */
     gap: 2.5rem;
     margin-top: 3rem;
   }
@@ -435,6 +442,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   .value-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
     color: var(--blue);
     margin-bottom: 1rem;
   }
@@ -463,9 +473,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       text-align: center;
     }
 
-    .philosophy-explanation {
-      text-align: center;
+    .values-grid {
+      grid-template-columns: 1fr; /* Stack on mobile */
+      gap: 1.5rem;
+    }
+
+    .premium-heading {
+      font-size: 2.2rem;
     }
   }
 </style>
-
