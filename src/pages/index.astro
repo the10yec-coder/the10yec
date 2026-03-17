@@ -3,13 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
 import triadImage from '../assets/images/triad-of-three-pillars.png';
 import yogaClassImage from '../assets/images/yoga-foundation-class.jpg';
-import trainingImage from '../assets/images/yoga-championship-training.jpg';
+import trainingImage from '../assets/images/yoga-championship-training.jpeg';
 import championImage from '../assets/images/banner.png';
 import ranchHeroImage from '../assets/images/ranch-hero.png';
 import naveenImage from '../assets/images/entrepreneur-naveen.jpeg';
 import sidharthImage from '../assets/images/entrepreneur-sidharth.jpeg';
 import adamImage from '../assets/images/entrepreneur-adam.jpeg';
 import aiCyberLabImage from '../assets/images/ai-cyber-lab.png';
+import techStartupWorkshopImage from '../assets/images/tech-startup-workshop.png';
 import qualifierImage from '../assets/images/usa-yoga-qualifier-user.jpg';
 
 const activePrograms = [
@@ -28,7 +29,7 @@ const activePrograms = [
     id: "championship-training",
     title: "Weekly Championship Training",
     date: "SUNDAYS",
-    time: "11:00 AM (CENTRAL)",
+    time: "11:30 AM (CENTRAL)",
     location: "The10YEC RANCH, FRISCO, TX",
     image: trainingImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
@@ -52,7 +53,7 @@ const activePrograms = [
     date: "MAY 15, 2026",
     time: "10:00 AM",
     location: "The10YEC RANCH, FRISCO, TX",
-    image: yogaClassImage,
+    image: techStartupWorkshopImage,
     whatsappLink: "https://chat.whatsapp.com/L2YECThe10YEC",
     bgColor: "#e3f2fd",
     objectPosition: "center center"
@@ -297,7 +298,7 @@ const partners = [
 
   <!-- Centers Section (Location) -->
   <section id="locations" class="section centers-section reveal">
-    <div class="container">
+    <div class="container-locations">
       <div class="section-header text-center">
         <span class="section-label">OUR LOCATIONS</span>
         <h2>The10YEC Centers</h2>
@@ -507,7 +508,7 @@ const partners = [
 
   .event-image-container {
     width: 100%;
-    height: 200px; /* Balanced height */
+    aspect-ratio: 1 / 1; /* Make images square */
     border-radius: 12px;
     overflow: hidden;
   }
@@ -1029,9 +1030,14 @@ const partners = [
   }
 
   /* Centers */
+  .container-locations {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
   /* Centers - Refined Premium */
   .location-feature-container {
-    max-width: 800px;
+    max-width: 1100px;
     margin: 2rem auto 0;
     padding: 0 1rem;
   }
