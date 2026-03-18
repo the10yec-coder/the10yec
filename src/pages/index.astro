@@ -152,7 +152,7 @@ const partners = [
   </section>
 
   <!-- Upcoming Events Section -->
-  <section id="events" class="section events-section reveal">
+  <section id="programs" class="section events-section reveal">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="events-title">Active <span class="text-blue">Programs</span></h2>
@@ -339,6 +339,12 @@ const partners = [
             </div>
 
             <div class="location-footer">
+              <a href="/about/team#experience" class="btn btn-outline btn-experience">
+                Explore the Experience
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 10l5 5-5 5M4 4v7a4 4 0 004 4h12"/>
+                </svg>
+              </a>
               <a href="https://www.google.com/maps/search/?api=1&query=7600+Cottonwood+St+Frisco+TX+75034" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-directions">
                 Get Directions
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1192,6 +1198,39 @@ const partners = [
 
   .btn-directions:hover svg {
     transform: translateX(5px);
+  }
+  
+  .location-footer {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-experience {
+    border-color: var(--gold);
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-experience:hover {
+    background: var(--gold);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
+  }
+
+  .btn-experience svg {
+    transition: transform 0.3s ease;
+  }
+
+  .btn-experience:hover svg {
+    transform: translateX(3px);
   }
 
   @media (max-width: 1024px) {

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { Image } from 'astro:assets';
-import founderImage from '../../assets/images/srini-gurrapu.jpg';
+import founderImage from '../../assets/images/srini-gurrapu.jpeg';
 ---
 
 <BaseLayout title="Our Team - The10YEC Youth Excellence Center">
@@ -50,7 +50,7 @@ import founderImage from '../../assets/images/srini-gurrapu.jpg';
     </div>
   </section>
 
-  <section class="section team-mentors-section">
+  <section id="experience" class="section team-mentors-section">
     <div class="containerWide">
       <div class="section-header text-center">
         <span class="section-label">OUR COMMUNITY & SPACES</span>
@@ -181,44 +181,52 @@ import founderImage from '../../assets/images/srini-gurrapu.jpg';
 
   .founder-profile {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 450px 1fr; /* Larger for horizontal images */
     gap: 3rem;
     margin-top: 3rem;
     max-width: 1400px;
     margin-left: auto;
     margin-right: auto;
+    align-items: flex-start; /* Correct placement for horizontal img next to vertical text */
   }
 
   .founder-image {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow-lg);
+    /* Removed aspect-ratio for full visibility of your horizontal image */
   }
 
   .founder-image img {
     width: 100%;
     height: auto;
+    object-fit: contain; /* Full visibility as requested */
     display: block;
+    object-position: center center;
   }
 
   .founder-content h3 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Reduced to fit horizontal image height */
+    font-family: 'Cormorant Garamond', serif;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.1;
   }
 
   .founder-title {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .founder-bio p {
-    font-size: 1rem;
-    line-height: 1.8;
+    font-size: 0.95rem; /* Reduced for better vertical fit */
+    line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .values-grid {
